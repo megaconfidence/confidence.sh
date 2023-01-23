@@ -15,14 +15,13 @@ dateFormat = "January 2, 2006"
 # mainSections = ["section1", "section2"]
 
 [author]
-bio = "Hi, I'm Confidence a Software Engineer based in Lagos Nigeria. Right now I work as a DevAd at Appsmit and share all of my experiences in writing and through videos on YouTube"
+bio = "Software Engineer | YouTuber"
 name = "Confidence Okoghenun"
-image = "img/author.jpg"
-headline = "Software Engineer | YouTuber | CEO of WebAssembly"
+image = "img/author.jpeg"
+headline = "Software Engineer | YouTuber"
 links = [
     { youtube = "https://youtube.com/megaconfidence" },
-    { twitter = "https://twitter.com/megaconfidence" },
     { github = "https://github.com/megaconfidence" },
+    { twitter = "https://twitter.com/megaconfidence" },
     { linkedin = "https://linkedin.com/in/megaconfidence" },
-    { email = "mailto:hello@your_domain.com" },
 ]

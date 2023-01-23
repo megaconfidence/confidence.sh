@@ -15,12 +15,12 @@ enableCodeCopy = true
 robots = "all"
 
 [header]
-layout = "basic" # valid options: basic, hamburger, hybrid, custom
+layout = "hybrid" # valid options: basic, hamburger, hybrid, custom
 # logo = "img/logo.jpg"
 showTitle = true
 
 [footer]
-showCopyright = true
+showCopyright = false
 showThemeAttribution = true
 showAppearanceSwitcher = true
 showScrollToTop = true
@@ -68,7 +68,7 @@ showTermCount = true
 # domain = "llama.yoursite.com"
 
 [verification]
-# google = ""
+google = "SoHCe3lRirYwB31W5tpF6ebY59nKAJo_1HiE6Ks2bSQ"
 # bing = ""
 # pinterest = ""
 # yandex = ""

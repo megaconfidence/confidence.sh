@@ -22,7 +22,7 @@ Before getting in, I’d like to explain what a 2.5 Gigabit network is. It’s t
 
 Okay, so let’s talk about my current gear. Here’s a pic of my single-closet networking gear:
 
-![Current Networking Gear](https://res.cloudinary.com/dnompba7x/image/upload/v1671563996/blogs/Local_Network_Physical_Layout_czze3v.png align="center")
+![Current Networking Gear](./images/local_network_physical_layout.webp)
 
 Current Networking Gear
 
@@ -59,7 +59,7 @@ I started with a simple home network setup (because I was a complete noob) and k
 
 To meet these requirements, I had to design my network layout. After experimenting a bit, I settled on this architecture, and I’m quite happy with it. Here’s a block diagram of my current network architecture:
 
-![Home Network Architecture.png](https://res.cloudinary.com/dnompba7x/image/upload/v1671563992/blogs/Home_Network_Architecture_uzo9sb.png align="center")
+![Home Network Architecture.png](./images/home_network_architecture.webp)
 
 As shown in the diagram, this architecture has two main pieces, the WAN (wide area network) i.e above the horizontal line, and the LAN (local area network) i.e below the horizontal line. WAN is basically what connects my home to the internet i.e, the router provided by my ISP. Everything below the horizontal line is my LAN network, which I have complete control over.
 
@@ -81,7 +81,7 @@ As told you, this is not going to change. I might switch to a faster network in 
 
 I’ll be replacing my current router with a much faster mini PC that has four 2.5 Gigabit ports (2500Mbit/s), which is insanely fast compared to the previous router. I’ll be able to pull 312MB/s as opposed to 12.5MB/s from the previous gear. [I settled on this Intel Celeron PC from Aliexpress](https://www.aliexpress.com/item/1005004302428997.html). I’m yet to decide what router software to run on it, though. Spec summary: Intel Celeron N5105 mini PC with 8GB of DDR4 and 128GB NVMe SSD. It’s gonna be wicked fast!
 
-![Intel Celeron Mini PC](https://res.cloudinary.com/dnompba7x/image/upload/v1671563992/blogs/mini_pc_n3d4v6.webp align="center")
+![Intel Celeron Mini PC](./images/mini_pc.webp)
 
 Intel Celeron Mini PC
 
@@ -89,7 +89,7 @@ Intel Celeron Mini PC
 
 I’ll be going with a much faster wireless router for my access point WiFi. [Xiaomi has a new WiFi 6 router](https://www.aliexpress.com/item/1005004141044323.html) that can reach max speeds of 1148Mb/s on the 2.4GHz band and 4804Mb/s on 5GHz. That’s about 4x more speed on 2.4G and 10x more on 5G compared to my current WiFi AP. Sweet! The best part is that I can install OpenWRT on this hardware and tweak the life out of this device.
 
-![Xiaomi Redmi AX6000 Router](https://res.cloudinary.com/dnompba7x/image/upload/v1671563992/blogs/Untitled_u131ze.png align="center")
+![Xiaomi Redmi AX6000 Router](./images/router.webp)
 
 Xiaomi Redmi AX6000 Router
 
@@ -103,7 +103,7 @@ I plan on fixing that by using a [2.5Gigabit/s ethernet adapter](https://www.ali
 
 Realtek Ethernet Adapter
 
-![Argon Eon NAS Case](https://res.cloudinary.com/dnompba7x/image/upload/v1671563993/blogs/Untitled_2_ruxm97.png align="center")
+![Argon Eon NAS Case](./images/argon_eon.webp)
 
 Argon Eon NAS Case
 
@@ -115,7 +115,7 @@ This is mostly going to remain the same. I bought extra ethernet adapters just i
 
 I came across these cheap [SSDs from Lenovo](https://www.aliexpress.com/item/1005004321003575.html). They have a max read speed of 500MB/s, which is 3x faster than my current drive. Sure, I can get much faster storage [like this 3,500MB/s SSD from Samsung](https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-evo-nvme-m2-2tb-mz-v7e2t0bw/), but they are 4x more expensive and consume way more power than I’d like for my little closet setup. Also, I wouldn’t be able to saturate the drive’s speed with a 2.5Gbit network, so there’s no use getting them.
 
-![Lenovo SSDs](https://res.cloudinary.com/dnompba7x/image/upload/v1671563992/blogs/ssd_oynmr0.webp align="center")
+![Lenovo SSDs](./images/ssd.webp)
 
 Lenovo SSDs
 
