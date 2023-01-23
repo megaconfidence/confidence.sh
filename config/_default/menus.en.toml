@@ -15,6 +15,12 @@ name = "Blog"
 pageRef = "blog"
 weight = 10
 
+[[main]]
+name = "Videos"
+url = "https://www.youtube.com/@megaconfidence"
+weight = 20
+[main.params]
+target = "_blank"
 # [[main]]
 # name = "Categories"
 # pageRef = "categories"
