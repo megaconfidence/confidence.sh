@@ -1,0 +1,14 @@
+# confidence.sh
+My personal blog built with Hugo and Congo
+
+## Converting Images TO Webp
+Install `cwebp`
+```sh
+sudo apt install webp #Ubuntu
+sudo dnf install libwebp-tools #Fedora
+```
+Then run this command to convert all images in the current directory to `webp`
+with a quality of 50
+```sh
+for file in ./*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done
+```
