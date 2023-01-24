@@ -3,7 +3,6 @@ title: "What’s On My Desk? 2022 Desk Setup Tour"
 date: 2023-01-23
 description: "A tour of my desk setup. It could inspire your next home-office"
 summary: "A tour of my desk setup. It could inspire your next home-office"
-coverCaption: "Photo by me on getty"
 tags: ["home-office", "work-from-home", "hardware"]
 ---
 
