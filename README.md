@@ -15,5 +15,4 @@ for file in ./*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done
 
 ## Notes
 ### Thumbnails
-Resolution: `1600x840px`
-Icon: `512x512px`
+Resolution: `1600x840px` Icon: `512x512px`

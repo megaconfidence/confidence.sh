@@ -28,7 +28,7 @@ showScrollToTop = true
 [homepage]
 layout = "profile" # valid options: page, profile, custom
 showRecent = true
-recentLimit = 5
+recentLimit = 3
 
 [article]
 showDate = true
@@ -41,7 +41,7 @@ showEdit = false
 editAppendPath = true
 showHeadingAnchors = true
 showPagination = true
-invertPagination = false
+invertPagination = true
 showReadingTime = true
 showTableOfContents = true
 showTaxonomies = true
