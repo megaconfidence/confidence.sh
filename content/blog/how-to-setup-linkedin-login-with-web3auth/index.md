@@ -55,7 +55,7 @@ The process of integrating LinkedIn login via Auth0 into a Web3Auth app looks li
     ![Screenshot from 2023-02-14 12-52-31-obfuscated.webp](./images/Screenshot_from_2023-02-14_12-52-31-obfuscated.webp)
     
 
-### **Setup Your Auth0 Tenant**
+### Setup Your Auth0 Tenant
 
 1. Login to Auth0 and create a new application, setting its type to **Single Page Web Application**
 2. In the **Settings** tab, take note of your `Domain` and `Client ID`
@@ -79,7 +79,7 @@ The process of integrating LinkedIn login via Auth0 into a Web3Auth app looks li
     ![Screenshot from 2023-02-14 13-26-52.webp](./images/Screenshot_from_2023-02-14_13-26-52.webp)
     
 
-### **Setup Your Web3Auth Dashboard**
+### Setup Your Web3Auth Dashboard
 
 1. Create a Project from the **Plug and Play** section of the [Web3Auth developer dashboard](https://dashboard.web3auth.io/)
     1. Set the environment to Testnet. We recommend creating a project in the Tesnet network during development. And while moving to a production environment, make sure to convert your project to Mainnet, Aqua, Celeste or Cyan network, otherwise, you'll end up losing users and keys
@@ -102,7 +102,7 @@ The process of integrating LinkedIn login via Auth0 into a Web3Auth app looks li
 4. Click on the **************Create************** button and your verifier will be deployed to the selected environment within 10 minutes
 5. Take note of your verifier identifier as it will be needed later on
 
-## **Using The Web3Auth SDK**
+## Using The Web3Auth SDK
 
 To use the Web3Auth SDK, you need to add the dependency of the respective platform SDK of Web3Auth to your project. To know more about the available SDKs, please have a look at this [documentation page](https://web3auth.io/docs/sdk).
 
@@ -112,7 +112,7 @@ In this guide, we will be using [Web3Auth Plug and Play Core SDK](https://web3au
 
 If you are starting from scratch, you’ll need to create a base Web application, where you can install the required dependencies. However, setting up Web3 requires a little extra configuration because certain packages are not available in the browser environment, and we need to polyfill them. You can follow [this documentation](https://web3auth.io/docs/troubleshooting/webpack-issues) where we have mentioned the configuration changes required for some popular frameworks.
 
-### **Installation**
+### Installation
 
 You’ll need to install the following dependencies in your project
 
@@ -142,7 +142,7 @@ Please make sure this setup is in your application constructor, as this ensures 
 
 This guide will focus only on instantiation, configuration (of the Openlogin adapter), and initialization of the Web3Auth SDK. To know more about the other things you can do with Web3Auth, check out our [SDK Reference](https://web3auth.io/docs/sdk/web/core).
 
-### **Instantiate Web3Auth And OpenLogin Adapter**
+### Instantiate Web3Auth And OpenLogin Adapter
 
 First, you’ll need to import the libraries installed earlier
 
@@ -244,7 +244,7 @@ const getProfile = async () => {
 };
 ```
 
-### **Interacting With The Blockchain**
+### Interacting With The Blockchain
 
 For communication with the blockchain, the following actions are supported:
 
