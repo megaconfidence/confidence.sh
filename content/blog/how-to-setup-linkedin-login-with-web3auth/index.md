@@ -10,7 +10,7 @@ This guide will cover the basics of how to set up your Web3Auth SDK and LinkedIn
 
 Since Web3Auth doesn’t yet have a native provider for LinkedIn, we will use the Auth0 provider and set up LinkedIn social authentication through Auth0.
 
-Live Demo: [https://web3auth-linkedin-login.vercel.app/](https://web3auth-linkedin-login.vercel.app/)
+<!-- Live Demo: [https://web3auth-linkedin-login.vercel.app/](https://web3auth-linkedin-login.vercel.app/) -->
 
 ## Quick Start
 
