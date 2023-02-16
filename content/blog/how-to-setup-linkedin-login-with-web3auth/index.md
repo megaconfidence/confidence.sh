@@ -43,10 +43,7 @@ The process of integrating LinkedIn login via Auth0 into a Web3Auth app looks li
 
 ### Setup Your LinkedIn App
 
-<aside>
-💡 You may need to create a LinkedIn company page if you do not already have one
-
-</aside>
+> 💡 You may need to create a LinkedIn company page if you do not already have one
 
 1. Follow the prompts to create an app on the [LinkedIn developer account](https://developer.linkedin.com)
 2. After creating the app, select **Sign in with LinkedIn** on the products page
