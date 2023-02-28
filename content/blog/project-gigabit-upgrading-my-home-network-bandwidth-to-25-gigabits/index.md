@@ -99,7 +99,7 @@ My home server is still going to be my current Raspberry Pi (because it’s powe
 
 I plan on fixing that by using a [2.5Gigabit/s ethernet adapter](https://www.aliexpress.com/item/1005003432693810.html) (with Realtek RTL8156 card) to even things up. This way, the Pi is going to be as fast as other devices on my network. I’ll also be upgrading the case to this cool NAS [case from Argon 40](https://www.argon40.com/products/argon-eon-pi-nas) with four SATA bays so that I can upgrade my storage capacity and speed too. Here are some pics:
 
-![Realtek Ethernet Adapter](https://res.cloudinary.com/dnompba7x/image/upload/v1671563992/blogs/Untitled_1_mjsfcz.png align="center")
+![Realtek Ethernet Adapter](./images/ethernet_adapter.webp)
 
 Realtek Ethernet Adapter
 
