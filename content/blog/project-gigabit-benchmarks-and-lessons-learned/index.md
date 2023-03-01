@@ -36,9 +36,11 @@ Finally! We’re reaching gigabit speeds at 934Mb/s, approximately 40% of my net
 
 {{< tweet user="megaconfidence" id="1616764148704067584" >}}
 
-Superb, now we’re above the gigabit limit at 1.73Gb/s, which is 70% of my network's max bandwidth. It’s not quite at 100%, but I’m pleased with the results for now and I’ll be making more tweaks in the coming months to get as close as possible to 2.5Gb/s.
+Superb, now we’re above the gigabit limit at 1.73Gb/s, which is 70% of my network's max bandwidth. It’s not quite at 100%, but I’m pleased with the results for now and I’ll be making more tweaks in the coming months to get as close as possible to 2.5Gb/s. I stumbled into a forum that suggested enabling jumbo frames on and overclocking the Pi to reach the desired 2.5Gb/s speed. I’m yet to set it up but feel free to take a look [here](https://forums.raspberrypi.com/viewtopic.php?t=278985#p1787271) if you’re interested.
 
-I stumbled into a forum that suggested enabling jumbo frames on and overclocking the Pi to reach the desired 2.5Gb/s speed. I’m yet to set it up but feel free to take a look [here](https://forums.raspberrypi.com/viewtopic.php?t=278985#p1787271) if you’re interested.
+Happy to let you know that this upgrade also impacted my internet speed. What more can a guy ask for:
+
+{{< tweet user="megaconfidence" id="1629418465294536704" >}}
 
 ## Lessons Learned
 
