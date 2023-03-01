@@ -1,5 +1,5 @@
 ---
-title: "Project Gigabit: Lessons Learned And Benchmarks"
+title: "Project Gigabit: Benchmarks And Lessons Learned"
 date: 2023-03-01
 description: "Benchmarks and lesson learned from my home network upgrade"
 summary: "Benchmarks and lesson learned from my home network upgrade"
