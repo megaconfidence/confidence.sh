@@ -11,29 +11,25 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-name = "Blog"
-pageRef = "blog"
-weight = 10
-
-[[main]]
 name = "Videos"
 url = "https://www.youtube.com/@megaconfidence"
-weight = 20
+weight = 10
 [main.params]
 target = "_blank"
-# [[main]]
-# name = "Categories"
-# pageRef = "categories"
-# weight = 20
-#
+
 [[main]]
-name = "Tags"
-pageRef = "tags"
+name = "Blog"
+pageRef = "blog"
+weight = 20
+
+[[main]]
+name = "Books"
+pageRef = "books"
 weight = 30
 
 [[main]]
 identifier = "search"
-weight = 99
+weight = 100
 [main.params]
 action = "search"
 icon = "search"
