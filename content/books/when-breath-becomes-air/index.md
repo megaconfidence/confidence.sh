@@ -1,4 +1,3 @@
-
 ---
 title: "When Breath Becomes Air"
 date: 2023-03-19
@@ -15,5 +14,4 @@ This was a good read!
 A friend shared this lecture by Randy Pausch who died from cancer a few months
 later. It contains a lot of important life-lessons. Enjoy!
 
-
- {{< youtube -Arnrxle4Gw >}}
+{{< youtube -Arnrxle4Gw >}}
