@@ -18,6 +18,11 @@ weight = 10
 target = "_blank"
 
 [[main]]
+name = "Talks"
+pageRef = "talks"
+weight = 25
+
+[[main]]
 name = "Blog"
 pageRef = "blog"
 weight = 20
