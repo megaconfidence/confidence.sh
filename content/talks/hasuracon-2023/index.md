@@ -1,6 +1,6 @@
 ---
 title: "Internal Tooling Made Easy With Hasura & GraphQL"
-date: 2023-05-22
+date: 2023-06-09
 description: "Learn how Hasura's GraphQL engine and Appsmith pair up to help you build powerful apps"
 summary: "Learn how Hasura's GraphQL engine and Appsmith pair up to help you build powerful apps"
 tags: ["open-source", "appsmith", "hasura"]
