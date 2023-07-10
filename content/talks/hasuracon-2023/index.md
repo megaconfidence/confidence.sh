@@ -21,4 +21,4 @@ Media and press coverage:
 
 {{< tweet user="theappsmith" id="1669135942953598976" >}}
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7072647348471902208" allowfullscreen="" title="Embedded post" width="504" height="496" frameborder="0"></iframe>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7072647348471902208" allowfullscreen="" title="Embedded post" width="84%" height="496" frameborder="0"></iframe>
