@@ -33,6 +33,11 @@ pageRef = "books"
 weight = 30
 
 [[main]]
+name = "Uses"
+pageRef = "uses"
+weight = 40
+
+[[main]]
 identifier = "search"
 weight = 100
 [main.params]
