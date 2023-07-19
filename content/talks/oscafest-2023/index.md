@@ -18,6 +18,8 @@ money.
 The turnout was quite encouraging and I had a lot of fun at the event. Here are
 a few candy for your eyes.
 
+{{< youtube "b8Fo--gm-FQ?start=4896&end=5592">}}
+
 {{< tweet user="jwf_foss" id="1670018844272873472" >}}
 
 {{< tweet user="codemon_" id="1670017124381630464" >}}
