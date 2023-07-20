@@ -1,7 +1,7 @@
-
 ---
 title: "Stuff I Use"
-description: "Some of the books I've read"
+description: "Tools of the trade"
+date: 2023-07-20
 ---
 
 ## Dev Tools
@@ -21,9 +21,9 @@ description: "Some of the books I've read"
 - [Google Pixel 7](https://store.google.com/us/product/pixel_7) - A simple device for a simple human
 
 ### Laptops
-- Lenovo Thinkpad x1 Carbon (6th gen)
-- 2023 14" MacBook Pro
-- 2022 16" MacBook Pro
+- [Lenovo Thinkpad x1 Carbon (6th gen)](https://www.laptopmag.com/reviews/laptops/lenovo-thinkpad-x1-carbon) - The legendary Thankpad
+- [2023 14" MacBook Pro](https://support.apple.com/kb/SP889) - M2 Power
+- [2021 16" MacBook Pro](https://support.apple.com/kb/SP858?locale=en_US) - Apple's amazing ARM
 
 ### Displays
 - [Dell UltraSharp U3419W](https://www.dell.com/ae/business/p/dell-u3419w-monitor/pd) Monitor - Larger than life monitor
@@ -32,17 +32,24 @@ description: "Some of the books I've read"
 ### Cameras 
 - [Sony A7C](https://electronics.sony.com/imaging/interchangeable-lens-cameras/all-interchangeable-lens-cameras/p/ilce7c-b) -  World class mirrorless king
 - [Sony ZV-E10](https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilczve10-b) - Compact APS-C
+- [Logitech Streamcam](https://www.logitech.com/en-us/products/webcams/streamcam.html) - 1080p streaming webcam
 
-- Logitech Streamcam 
-- Elgato Key Light Air 
-- Shure SM7B Mic
-- Blue Compass Mic Arm 
-- Logitech Z207 Stereo Speakers 
-- Elgato Stream Deck Mini 
+### Mic
+- [Shure SM7B Mic](https://www.shure.com/en-US/products/microphones/sm7b) -
+  You'll sound like Celine Dion
+- [Blue Compass Mic Arm](https://www.logitechg.com/en-us/products/streaming-gear/compass-boom-microphone-arm.989-000517.html) - Microphone boom arm 
+- [Focusrite Scarlet 2i2](https://us.focusrite.com/products/scarlett-2i2) -
+  USB audio interface 
+- [Cloudlifter Mic Activator](https://www.cloudmicrophones.com/cloudlifter-cl-1) - Mic preamp
+
+### I/O
 - Logitech MX Keys Mini 
 - Logitech MX Master 3 
-- Focusrite Scarlet 2i2 
-- Cloudlifter Mic Activator 
+- Elgato Stream Deck Mini 
+- Logitech Z207 Stereo Speakers 
+
+### Miscellaneous
 - Google Nest Mini 
+- Elgato Key Light Air 
 - Elgato Master Mount L
 
