@@ -1,22 +1,21 @@
 ---
 title: "Stuff I Use"
 description: "Tools of the trade"
-date: 2023-07-20
+showDate: false
+showComments: false
+showReadingTime: false
 ---
-
-## Dev Tools
+> Last updated: 21-07-2023
+## Software
 - [Neovim](https://github.com/neovim/neovim) - The last editor you'll need 
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/) - Best non-chrome browser 
-
-
-## CLI Tools 
 - [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - An infinitely customizable shell 
 - [Oh My ZSH](https://ohmyz.sh/) - The config manager for ZSH 
 - [Tmux](https://github.com/tmux/tmux) - Advanced ternminal Multiplexing
 - [Tilix](https://github.com/gnunn1/tilix) / [iTerm2](https://iterm2.com/) - Best terminal emulators 
 
 
-## Home Office
+## Hardware
 ### Mobile 
 - [Google Pixel 7](https://store.google.com/us/product/pixel_7) - A simple device for a simple human
 
@@ -43,13 +42,13 @@ date: 2023-07-20
 - [Cloudlifter Mic Activator](https://www.cloudmicrophones.com/cloudlifter-cl-1) - Mic preamp
 
 ### I/O
-- Logitech MX Keys Mini 
-- Logitech MX Master 3 
-- Elgato Stream Deck Mini 
-- Logitech Z207 Stereo Speakers 
+- [Logitech MX Keys Mini](https://www.logitech.com/en-us/products/keyboards/mx-keys-mini.html) - One keyboard, all OSes
+- [Logitech MX Master 3](https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html) - An infinite scroll wheel
+- [Elgato Stream Deck MK.2](https://www.elgato.com/us/en/p/stream-deck-mk2-black) - Programmable keypad
+- [Logitech Z207 Stereo Speakers](https://www.logitech.com/en-us/products/speakers/z207-stereo-speakers-bluetooth.980-001294.html) - 3-in-1 speakers
 
 ### Miscellaneous
-- Google Nest Mini 
-- Elgato Key Light Air 
-- Elgato Master Mount L
+- [Google Nest Mini](https://store.google.com/us/product/google_nest_mini?hl=en-US) - OK Google
+- [Elgato Key Light Air](https://www.elgato.com/us/en/p/key-light-air) - Smart key lights
+- [Elgato Master Mount L](https://www.elgato.com/us/en/p/master-mount-l) - Mount any accessory
 
