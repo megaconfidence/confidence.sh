@@ -59,7 +59,7 @@ Figuring out what folders to add may require some poking around the container vo
 
 ## Creating A Backup Script
 
-At this stage, our backup automation isn’t really an automation because it only works when files are manually committed and pushed to the remote Git repository. Let’s change that by creating a `[backup.sh](http://backup.sh)` shell script that does all the work. This script could be added to the repository based on your preference:
+At this stage, our backup automation isn’t really an automation because it only works when files are manually committed and pushed to the remote Git repository. Let’s change that by creating a `backup.sh` shell script that does all the work. This script could be added to the repository based on your preference:
 
 ```bash
 #!/bin/bash
