@@ -101,4 +101,4 @@ The `cron` expression `0 0 * * *` will run your backup script every day at midni
 
 ## Summary
 
-Awesome! This was a quick guide on setting up a free remote database backup for your servers. If you’d love to learn about a free backup strategy for media files, please keep an eye [on my blog](https://confidence.sh/). Till then, see ya!
+Awesome! This was a quick guide on setting up a free remote database backup for your servers. If you’d love to learn about a free backup strategy for media files, [follow me Twitter for more updates](https://twitter.com/megaconfidence). Till then, see ya!
