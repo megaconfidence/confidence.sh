@@ -15,10 +15,10 @@ dateFormat = "January 2, 2006"
 # mainSections = ["section1", "section2"]
 
 [author]
-bio = "Software Engineer & Dev Advocate from Lagos 🇳🇬 • I can help you learn WebAssembly. Let's connect!"
+bio = "Software Engineer & Dev Advocate"
 name = "Confidence Okoghenun"
 image = "img/author.webp"
-headline = "Software Engineer & Dev Advocate from Lagos 🇳🇬 • I can help you learn WebAssembly. Let's connect!"
+headline = "Software Engineer & Dev Advocate"
 links = [
     { youtube = "https://youtube.com/megaconfidence" },
     { github = "https://github.com/megaconfidence" },
