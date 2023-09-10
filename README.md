@@ -23,7 +23,7 @@ Then run this command to convert all images in the current directory to `webp`
 with a quality of 50
 
 ```sh
-for file in ./*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done
+for file in ./*; do cwebp -q 90 "$file" -o "${file%.*}.webp"; done
 ```
 
 ## Notes
