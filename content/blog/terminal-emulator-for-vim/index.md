@@ -1,6 +1,6 @@
 ---
 title: "The Best Terminal Emulator For Vim/Neovim"
-date: 2023-09-11
+date: 2023-09-10
 description: "The best options to choose from when shopping for a Vim terminal"
 summary: "The best options to choose from when shopping for a Vim terminal"
 tags: ["developer-tools", "productivity", "cli"]
@@ -14,7 +14,7 @@ Before we begin, it’s nice to let you know both Vim and Neovim are identical i
 
 You probably didn’t know Vim comes with an integrated terminal that you can open with the `:terminal` or `:ter` (for short) command. They behave like regular Vim buffers and all the usual Vim keybindings work as expected. I’d say the best part is you can immediately pass a command to be executed in the terminal i.e try running `:ter ls -l` (it prints folders in the current directory to a new buffer). This can be extremely useful for running quick tests, or build commands.
 
-![Compiling a Rust project within Vim’s terminal with  `:ter cargo build --release`](./media/Screenshot_2023-09-08_at_6.49.24_PM.png)
+![Compiling a Rust project within Vim’s terminal with  `:ter cargo build --release`](./media/built-in-terminal.webp)
 
 Compiling a Rust project within Vim’s terminal with `:ter cargo build --release`
 
@@ -26,7 +26,7 @@ If you prefer using the Vim integrated terminal but want a better experience whi
 
 Personally, I have tried [Toggle Term](https://github.com/akinsho/toggleterm.nvim) and really liked it. I get a terminal whenever I hit the shortcut `Ctrl+\` and I can create more by passing a count. There are other excellent terminal plugins you could also try for yourself, so I’ll leave a link here to a repo where you can find the most popular ones. Here is a [link to the repo](https://github.com/rockerBOO/awesome-neovim#terminal-integration), and each project contains documentation to help you set it up.
 
-![A floating terminal with Toggle Term](./media/Screenshot_2023-09-08_at_7.32.54_PM.png)
+![A floating terminal with Toggle Term](./media/toggleterm.webp)
 
 A floating terminal with Toggle Term
 
