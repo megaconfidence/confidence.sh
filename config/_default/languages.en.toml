@@ -1,17 +1,17 @@
 languageCode = "en"
 languageName = "English"
-displayName = "EN"
-isoCode = "en"
 weight = 1
-rtl = false
 
 title = "confidence.sh"
-description = "A blog by Confidence Okoghenun"
 # copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "January 2, 2006"
 
 [params]
+rtl = false
+isoCode = "en"
+displayName = "EN"
+dateFormat = "January 2, 2006"
+description = "A blog by Confidence Okoghenun"
 # mainSections = ["section1", "section2"]
 
 [author]
