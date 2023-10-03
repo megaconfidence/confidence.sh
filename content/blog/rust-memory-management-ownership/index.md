@@ -1,6 +1,6 @@
 ---
 title: "Rust Memory Management For The Rest Of Us: Ownership"
-date: 2023-10-02
+date: 2023-10-03
 description: "Learn how memory management works in Rust"
 summary: "Learn how memory management works in Rust"
 tags: ["rust", "programming"]
@@ -112,7 +112,7 @@ fn sum_numbers(numbers: Vec<i8>) -> i8 { //takes ownership of numbers
 fn main() {
     let numbers = vec![3, 2, 1]; //allocates vector of numbers on heap
     println!("{:?}", sum_numbers(numbers)); //numbers is moved to sum_numbers
-		println!("{:?}", sum_numbers(numbers)); //numbers is already deallocated. What happens next?
+	println!("{:?}", sum_numbers(numbers)); //numbers is already deallocated. What happens next?
 }
 ```
 
