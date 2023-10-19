@@ -15,10 +15,10 @@ description = "A blog by Confidence Okoghenun"
 # mainSections = ["section1", "section2"]
 
 [author]
-bio = "Software Engineer & Dev Advocate"
+bio = "Software Engineer 🛠️ • Developer Advocate 🥑"
 name = "Confidence Okoghenun"
-image = "img/author.webp"
-headline = "Software Engineer & Dev Advocate"
+image = "img/author.jpg"
+headline = "Software Engineer 🛠️ • Developer Advocate 🥑"
 links = [
     { youtube = "https://www.youtube.com/@megaconfidence" },
     { github = "https://github.com/megaconfidence" },
