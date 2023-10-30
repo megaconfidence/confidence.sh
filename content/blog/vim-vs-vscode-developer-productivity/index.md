@@ -30,20 +30,19 @@ Here’s how Vscode compares with Vim at refactoring. You can quickly tell Vim i
 
 Refactoring with Vscode:
 
-{{< youtube n6BtyiZPb30 >}}
+{{< youtube gR_W9j498yw >}}
 
 Refactoring with Vim:
 
-{{< youtube _-m3fGQO0Sk >}}
-
+{{< youtube oZ97gAPkvrQ >}}
 
 ### 2. Extremely Lightweight: Low CPU & Memory Usage
 
 Vscode is written with web technologies (HTML, CSS, and JavaScript), which sounds cool, but comes at the cost of compute. As with many Electron-based apps, Vscode has very slow startup times and can [consume up to several gigabytes of RAM](https://code.visualstudio.com/docs/supporting/requirements#_hardware) when used in large projects, which is a real concern when working in constrained environments. Vscode also becomes laggy and unresponsive over time, forcing users to reinstall the application. These are all relatable issues if you’ve used Vscode as a daily driver.
 
-But that’s not the case with Vim. As a super lightweight editor written in C, Vim can run fast on almost any computer hardware, and as a result, is installed by default on most Unix-based operating systems. 
+But that’s not the case with Vim. As a super lightweight editor written in C, Vim can run fast on almost any computer hardware, and as a result, is installed by default on most Unix-based operating systems.
 
->💡 Try opening up a terminal in your computer and type `Vim` or `Vi` to see if it came preinstalled
+> 💡 Try opening up a terminal in your computer and type `Vim` or `Vi` to see if it came preinstalled
 
 Here are a few charts detailing how Vim compares with Vscode when it comes to startup times and memory usage:
 
@@ -51,11 +50,9 @@ Startup time used in seconds to open a 6-megabyte XML file [credits](https://med
 
 ![Startup time used in seconds to open a 6-megabyte XML file](./images/6mb_xml_file.webp)
 
-
 Memory used in KiB opening a ~60 byte C source file [credits](https://medium.com/commitlog/why-i-still-use-vim-67afd76b4db6):
 
 ![Memory used in KiB opening a ~60 byte C source file](./images/60b_c_file.webp)
-
 
 As clearly seen from the benchmarks, Vim is 82% faster than Vscode, while using 96% less RAM. That's mind-blowing 🤯.
 
@@ -63,7 +60,7 @@ As clearly seen from the benchmarks, Vim is 82% faster than Vscode, while using 
 
 Vim can run anywhere (remote servers included), on any machine, in the exact same way, every time. This was the main reason I switched to Vim, I just wanted something that works everywhere.
 
-As a programmer, there are high chances you’ll have to work in various environments and with multiple machines. For example, you may have a development machine and a server to which your code is deployed. If you ever need to look up things or edit files in a headless server, you’ll be out of luck using Vscode as it requires a GUI to run. 
+As a programmer, there are high chances you’ll have to work in various environments and with multiple machines. For example, you may have a development machine and a server to which your code is deployed. If you ever need to look up things or edit files in a headless server, you’ll be out of luck using Vscode as it requires a GUI to run.
 
 This is another area where Vim shines. Vim runs in the terminal and can be used in any environment, whether a GUI is present or not. Vim has the same keybinding set across all operating systems, unlike Vscode, which has [different shortcuts for Linux, Mac, and Windows](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference). So with Vim, you learn once and use it everywhere. All of these, coupled with the fact that Vim has a tiny CPU and memory footprint, make Vim a truly ubiquitous editor.
 
@@ -73,11 +70,9 @@ Vim is infinitely customizable. While Vscode allows you to change the app’s co
 
 The extent to which you can customize Vim is only limited by your imagination (and skills 😂).
 
- 
-
 ### The BTW Factor
 
-And lastly, there’s the “*by the way”* (BTW) factor. Only the coolest programmers in the universe use Vim, as most developers opt out for out-of-the-box solutions like Vscode. So you get to join the cool kids by switching, and you can completely stop conversations by saying, “…BTW, I use Vim.”
+And lastly, there’s the “_by the way”_ (BTW) factor. Only the coolest programmers in the universe use Vim, as most developers opt out for out-of-the-box solutions like Vscode. So you get to join the cool kids by switching, and you can completely stop conversations by saying, “…BTW, I use Vim.”
 
 ![BTW Factor](./images/btw_factor.webp)
 
@@ -99,11 +94,11 @@ sudo apt install vim
 
 Setting up Vim takes only a few minutes (this is probably another awesome feature of Vim) as it is 100% scriptable. Here’s a shot video of me installing Vim (with all of my user configuration and plugins) on a fresh Debian-based system in less than 2 minutes:
 
- {{< youtube THs9PnwF388 >}}
+{{< youtube gUwh0_J5lGI >}}
 
 Because Vim is so programmable, all your configurations can be stored in a GitHub repo and used in automated installs, as you saw above. If you’d love to try it out, here’s a [link to an Ansible playbook](https://github.com/cokoghenun/ansible) to install Vim with all of my favorite plugins for Debian-based systems.
 
-To aid adoption, most teams include a Vim config file in their project’s repository that’s installed as part of the onboarding process. This way, all team members are easily bootstrapped into an IDE that *‘just works’* for the current project.
+To aid adoption, most teams include a Vim config file in their project’s repository that’s installed as part of the onboarding process. This way, all team members are easily bootstrapped into an IDE that _‘just works’_ for the current project.
 
 ### Attaining Vim Mastery
 

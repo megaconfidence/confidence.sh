@@ -38,7 +38,7 @@ If you’ve never used Tmux, it’s going to sound crazy when I tell you that yo
 
 Tmux by itself is an awesome program, but forms a dynamic duo when used with Vim. To illustrate, here’s a short screencast showing how Tmux can be used with Vim. As you can see, you not only get several terminal emulators on command, but Tmux can restore all running programs if your computer restarts. How cool is that?
 
-{{< youtube  q85Uli0A7-s >}}
+{{< youtube  wP0OXL2TgD8 >}}
 
 The best part is Tmux is highly intuitive, and you can [learn the basics](https://tmuxcheatsheet.com/) quickly with. You only need a few Tmux plugins ([Tmux Resurrect](https://github.com/tmux-plugins/tmux-resurrect) and [Tmux Continuum](https://github.com/tmux-plugins/tmux-continuum)) and just one Vim plugin ([Auto Session](https://github.com/rmagatti/auto-session)) to replicate my entire setup. But there’s a lot you can automate with a Vim and Tmux setup, and I encourage you to look up more information on the internet. Give Tmux a try, you’ll never look back.
 
