@@ -64,7 +64,7 @@ fn sum_numbers() -> (i8, Vec<i8>) {
 	}
 	return (total, numbers);
 } //out of scope, but numbers can't be deallocated because it is returned
-	//rather, numbers is moved to the callign scope
+	//rather, numbers is moved to the calling scope
 
 fn main() {
     println!("{:?}", sum_numbers()); //main takes ownership of numbers
@@ -75,7 +75,7 @@ _Code block 2_
 
 Whenever Rust creates a new allocation, it _assigns_ it to the allocating scope i.e. the scope **owns** the allocation. And when the scope exits, it is responsible for cleaning up all allocations tied to it. In the first example we looked at (Code block 1), `numbers` was created in the `sum_numbers` scope, thus `sum_numbers` was responsible for cleaning it up when it went out of scope. But in the second example (Code block 2), `numbers` is returned to the calling `main` function, and as a result, Rust _transfers_ its ownership from `sum_numbers` to `main`. Finally, when `main` goes out of scope, `numbers` is correctly deallocated.
 
-Now, let's consider a lightly different situation. The example we've used so far has been modified such that `numbers` is initialized in `main`, and passed as a parameter to `sum_numbers`. Follow the flow of control and the comments to get a sense of how Rust handles memory management in this situation. As you'll notice, ownership of `numbers` is _moved_ to `sum_numbers`, and it's deallocated when `sum_numbers` goes out of scope:
+Now, let's consider a slightly different situation. The example we've used so far has been modified such that `numbers` is initialized in `main`, and passed as a parameter to `sum_numbers`. Follow the flow of control and the comments to get a sense of how Rust handles memory management in this situation. As you'll notice, ownership of `numbers` is _moved_ to `sum_numbers`, and it's deallocated when `sum_numbers` goes out of scope:
 
 ```rust
 fn sum_numbers(numbers: Vec<i8>) -> i8 { //takes ownership of numbers
