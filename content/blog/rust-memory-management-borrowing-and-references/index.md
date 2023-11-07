@@ -12,6 +12,10 @@ In this article, we'll cover other edge cases when passing memory across your pr
 
 ## The Ownership Gotcha
 
+{{< youtube G0C3rAIoFNU >}}
+
+In the last example from the [previous article](https://dev.to/megaconfidence/beginner-guide-to-memory-management-in-rust-ownership-380p), we had a situation where we needed to use the `numbers` vector twice within the program. From our knowledge of ownership, we know Rust _moves_ the variable to the first call to `sum_numbers` and deallocates it when the function returns. Using the variable a second time causes a compilation error. At this point, `numbers` has been deallocated and is uninitialized, thus Rust prevents us from accessing uninitialized memory and crashes the build.
+
 ```rust
 fn sum_numbers(numbers: Vec<i8>) -> i8 { //takes ownership of numbers
     let mut total = 0;
@@ -25,11 +29,10 @@ fn main() {
     let numbers = vec![3, 2, 1]; //allocates vector of numbers on heap
     println!("{:?}", sum_numbers(numbers)); //numbers is moved to sum_numbers
     println!("{:?}", sum_numbers(numbers)); //⚠️ numbers is already deallocated. Program does not compile.
+}
 ```
 
 _Code block 1_
-
-In the last example from the [previous article](../rust-memory-management-ownership/), we had a situation where we needed to use the `numbers` vector twice within the program. From our knowledge of ownership, we know Rust _moves_ the variable to the first call to `sum_numbers` and deallocates it when the function returns. Using the variable a second time causes a compilation error. At this point, `numbers` has been deallocated and is uninitialized, thus Rust prevents us from accessing uninitialized memory and crashes the build.
 
 Passing data allocated on the heap to a new scope, i.e function call, causes Rust to _move_ that data into the scope. And Rust deallocates it when the scope exits to ensure memory is safely used. So what about using a variable more than once? My guess is you never had to think too much about this while writing other languages, but we aren't in Kansas anymore. The big question is, how do you reuse variables in Rust programs?
 
@@ -164,4 +167,3 @@ A key takeaway here is you **can't** both use mutable and shared references **_a
 ## Conclusion
 
 There's still a lot to learn about borrowing and references, but the best way to learn is by doing. So practice as you go and you'll be alright. In the next article, we'll learn about lifetimes and how they affect references in Rust. If you'd love to learn more about Rust, [follow me on Twitter](https://twitter.com/megaconfidence). Awesome, I'll see you in the next one. Cheers!
-
