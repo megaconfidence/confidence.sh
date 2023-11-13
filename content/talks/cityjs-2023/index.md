@@ -8,12 +8,12 @@ tags: ["open-source", "ai", "low-code", "productivity"]
 
 I had an awesome session at CityJS Lagos this weekend! I gave a talk on the use of low-code and AI tools, and discussed how developers can level-up on productivity by adopting such technologies. Sadly, some traditional developers dismiss these tools, and we talked about how detrimental that is. You can watch the recording of the talk below.
 
-{{< youtube "yR47mknQBi4?start=20207&end=21306" >}}
-
 You can view my deck here 👉
 {{< button href="https://pitch.com/public/55619267-ede2-4f3d-b069-91146a3aa9b0" target="_blank" >}}
 🔗 Link to presentation
 {{< /button >}}
+
+{{< youtube "yR47mknQBi4?start=20207&end=21306" >}}
 
 Media and press coverage:
 
