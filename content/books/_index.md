@@ -1,7 +1,6 @@
 ---
 title: "Books"
 description: "Some of the books I've read"
-
 ---
 
 {{< lead >}}

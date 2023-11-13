@@ -10,6 +10,12 @@ To download any module update, please run:
  hugo mod get -u
 ```
 
+Clear module cache:
+
+```sh
+hugo mod clean
+```
+
 ## Converting Images To Webp
 
 Install `cwebp`
