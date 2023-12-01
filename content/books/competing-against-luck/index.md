@@ -6,7 +6,7 @@ summary: "Innovation is random luck, or is it?"
 tags: ["Business", "Enterpreneurship", "Management"]
 ---
 
-What comes to your mind when you think of innovation? Does the microwave come to mind - A chocolate bar accidentally melting in the pocket of scientist? What if innovation isn't a random process and can be studied, understood and applied time and again? That's the premise of this book.
+What comes to your mind when you think of innovation? Does the microwave come to mind - a chocolate bar accidentally melting in the pocket of scientist? What if innovation isn't a random process and can be studied, understood and applied time and again? That's the premise of this book.
 
 Customers don't want to buy a quarter-inch drill; they want quarter-inch hole. They don’t buy products or services; they "hire" them to do a job, and carefully understanding customers jobs leads to innovation success. This book was really insightful for me, and you'll enjoy reading it took if you own a business or run a startup.
 
