@@ -10,7 +10,7 @@ What comes to your mind when you think of innovation? Does the microwave come to
 
 Customers don't want to buy a quarter-inch drill; they want quarter-inch hole. They don’t buy products or services; they "hire" them to do a job, and carefully understanding customers jobs leads to innovation success. This book was really insightful for me, and you'll enjoy reading it took if you own a business or run a startup.
 
-I took these interesting notes from this book:
+I took some interesting notes from this book:
 
 - Predicting innovation becomes more feasible when one comprehends the influencing factors behind consumers' choices.
 - If a company lacks an understanding of why a customer selects its product in specific situations, or opts for alternatives in different circumstances, its customer data is unlikely to contribute to innovative solutions.
