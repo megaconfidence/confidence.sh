@@ -18,7 +18,7 @@ Like you already guessed, Bluetooth is not a web technology. It doesn’t follow
 
 ![meme](./images/meme1.webp)
 
-Thanks to the GATT (**Generic ATTribute** Profile) standard, Bluetooth peripherals are able to communicate with other device using a generic data protocol. This standard is supported by modern web browsers, hence the birth of the Web Bluetooth API. GATT makes it possible to describe Bluetooth peripherals as **_servers_**, having a number of **_services_** that are controlled with their **\*characteristics**.\* This fits perfectly into the standard web model i.e clients (web browsers) connect to servers (Bluetooth peripherals) and can utilize services on the servers by making read/write request to the respective characteristics.
+Thanks to the GATT (**Generic ATTribute** Profile) standard, Bluetooth peripherals are able to communicate with other device using a generic data protocol. This standard is supported by modern web browsers, hence the birth of the Web Bluetooth API. GATT makes it possible to describe Bluetooth peripherals as **_servers_**, having a number of **_services_** that are controlled with their **_characteristics_**. This fits perfectly into the standard web model i.e clients (web browsers) connect to servers (Bluetooth peripherals) and can utilize services on the servers by making read/write request to the respective characteristics.
 
 ![GATT Explained](./images/GATT_Explained.webp)
 
@@ -201,4 +201,3 @@ Save and reload. With that, we’re good to go. You did it!
 Web Bluetooth opens up a host of new capabilities for the web, and I’m excited to see how far developers and hardware manufacture push it. I’d love to see the next cool project you build with Web Bluetooth, so please share it.
 
 If you love all things Web, [follow me on Twitter](https://twitter.com/megaconfidence) for more. Cheers, have a good one!
-
