@@ -6,7 +6,7 @@ summary: "Learn how Rust's module system works"
 tags: ["rust", "programming"]
 ---
 
-Modules in Rust can be somewhat confusing. They don't line up with what you're used to from other languages, and can be frustrating to work with. Adding to this, the official docs and other resources don't help that much. What if someone wrote an article where you can learn everything you need to know about modules in Rust. Wouldn't that be awesome
+Modules in Rust can be somewhat confusing. They don't line up with what you're used to from other languages, and can be frustrating to work with. Adding to this, the official docs and other resources don't help that much. What if someone wrote an article where you can learn everything you need to know about modules in Rust. Wouldn't that be awesome?
 
 In this article, I'll explain how Rust's module system works from top to bottom. I promise this article will be easy to understand and hope you'll find it helpful.
 
