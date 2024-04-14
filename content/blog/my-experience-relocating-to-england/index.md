@@ -1,8 +1,8 @@
 ---
 title: "My Experience Relocating To England"
 date: 2024-04-14
-description: "Not so easy"
-summary: "Not so easy"
+description: "From Lagos to London"
+summary: "From Lagos to London"
 tags: ["life", "personal"]
 ---
 
@@ -47,6 +47,8 @@ The best way to deal with changes associated with a move is to embrace it, just 
 It's been my experience that most locals are empathetic toward the relocating newbie. They know it can be overwhelming at first. So if you need help settling in, please ask and they'll be more than ready to help.
 
 ## Conclusion
+
+![Flower of hope](./images/flower.webp)
 
 That's it. It's been a wonderful experience. I know more is to come, so I'll probably write about it or perhaps start a vlog YouTube channel—like, share, subscribe. I'd like to close off by saying _bye bye._ It's used here a lot more than goodbye. It sounds a bit silly, but I think it's pretty cute.
 
