@@ -10,7 +10,7 @@ Hi, I wanted to do something a bit unusual—write about myself. Funny as that s
 
 ## How It Started
 
-One evening a few months ago, I got a message from a neighbour how rarely texts. He's a tech bro, but the super-friendly and convivial type. He texted to introduce me to another friend who shared an awesome opportunity with me. Lucky me, right?
+One evening a few months ago, I got a message from a neighbour who rarely texts. He's a tech bro, but the super-friendly and convivial type. He texted to introduce me to another friend who shared an awesome opportunity with me. Lucky me, right?
 
 For a few years now, the United Kingdom has been offering a special type of skilled worker visa know as Global Talent visa (a.k.a. Tech Nation visa) without the limitations of the regular skilled worker visa. The thing is, most people don't know about it (on average only 200 visas are issued yearly), or at least don't know how to go about it. Fortunately, my new friend was a sage at it, and he walked me through the process until I secured the visa.
 
