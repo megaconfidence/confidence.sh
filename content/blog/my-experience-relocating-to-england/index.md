@@ -12,23 +12,23 @@ Hi, I wanted to do something a bit unusual—write about myself. Funny as that s
 
 One evening a few months ago, I got a message from a neighbour who rarely texts. He's a tech bro, but the super-friendly and convivial type. He texted to introduce me to another friend who shared an awesome opportunity with me. Lucky me, right?
 
-For a few years now, the United Kingdom has been offering a special type of skilled worker visa know as Global Talent visa (a.k.a. Tech Nation visa) without the limitations of the regular skilled worker visa. The thing is, most people don't know about it (on average only 200 visas are issued yearly), or at least don't know how to go about it. Fortunately, my new friend was a sage at it, and he walked me through the process until I secured the visa.
+For a few years now, the United Kingdom has been offering a special type of skilled worker visa known as Global Talent visa (a.k.a. Tech Nation visa) without the limitations of the regular skilled worker visa. The thing is, most people don't know about it (on average only 200 visas are issued yearly), or at least don't know how to go about it. Fortunately, my new friend was a sage at it, and he walked me through the process until I secured the visa.
 
 The process was rigorous yet delicate. I had the support of my family (yes uncle, ain't skipping you this time) and friends along the way. It took months to complete and required a lot of work and luck. But it paid off nicely when I got the message that I've been granted a visa. But more importantly, it taught me how much of an asset good friends are. I wouldn't be here without them.
 
-I also met a few people who were wilfully unhelpful. You always do. But thanks to them also, I made it.
+I also met a few wilfully unhelpful people. You always do. But thanks to them also, I made it.
 
 ## The Move
 
-Around the time I got the visa, I also got a new job at a top technology company. Double lucky! That meant I had to prepare for my relocation as well as the new job at the same time. Fortunately, I got enough time for to plan for the move and that was vastly helpful. So plan I did.
+Around the time I got the visa, I also got a new job at a top technology company. Double lucky! That meant I had to prepare for my relocation as well as the new job at the same time. Fortunately, I got enough time to plan for the move and that was vastly helpful. So plan I did.
 
-I'm the kind of dude who likes to plan out every detail. So it took a while to come up with a good game-plan that accounted for all the variables influencing the move. I'm happy to report that most things went according to plan, and even some setbacks turned out to be for the best—the great mystery of life is that things _somehow_ work out in the end.
+I'm the kind of dude who likes to plan out every detail. So it took a while to come up with a good game plan that accounted for all the variables influencing the move. I'm happy to report that most things went according to plan, and even some setbacks turned out to be for the best—the great mystery of life is that things _somehow_ work out in the end.
 
 {{< tweet user="megaconfidence" id="1770913595594850486" >}}
 
 > Things go a little bit better when you plan it - Khalid (Location)
 
-So I split my move into two stages to reduce culture-shock. Yes, it's real. I travelled first to get myself acquainted with the city I planned to stay, and made a few other necessary preparations. Then I came back after having sorted the important bits, packed my bags, kissed my loved ones goodbye and was on to start the adventure.
+So I split my move into two stages to reduce culture shock. Yes, it's real. I travelled first to get myself acquainted with the city I planned to stay, and made a few other necessary preparations. Then I came back after having sorted the important bits, packed my bags, kissed my loved ones goodbye and was on to start the adventure.
 
 ![Saying good bye to my family](./images/family.webp)
 
@@ -36,7 +36,7 @@ I made them cry really hard 😅.
 
 ## Embracing Change
 
-The hardest part of relocating is all the _change_ associate with it. You get exposed to so many new things at the same time. The people are different, the food is different, everything is different. Not to mention, the support system you've built over the years to cope with life's big changes is left back home. So, how do you cope? You embrace it all.
+The hardest part of relocating is all the _change_ associated with it. You get exposed to so many new things at the same time. The people are different, the food is different, everything is different. Not to mention, the support system you've built over the years to cope with life's big changes is left back home. So, how do you cope? You embrace it all.
 
 Illustrating how to embrace changes with the analogy of rubber tyres, Dale Carnegie once wrote:
 
