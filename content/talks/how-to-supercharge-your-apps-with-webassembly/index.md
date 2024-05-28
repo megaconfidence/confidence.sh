@@ -18,9 +18,9 @@ repository.
 
 Media and press coverage:
 
-{{< tweet user="HasuraHQ" id="1676939050111082496" >}}
+{{< tweet user="HasuraHQ" id="1669691305704710144" >}}
 
-{{< tweet user="theappsmith" id="1677653736796168195" >}}
+{{< tweet user="theappsmith" id="1669135942953598976" >}}
 
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7084074410176843776" allowfullscreen="" title="Embedded post" width="84%" height="362" frameborder="0"></iframe>
 <!---->

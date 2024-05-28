@@ -14,7 +14,7 @@ dateFormat = "January 2, 2006"
 description = "A blog by Confidence Okoghenun"
 # mainSections = ["section1", "section2"]
 
-[author]
+[params.author]
 bio = "Software Engineer 🛠️ • Developer Advocate 🥑"
 name = "Confidence Okoghenun"
 image = "img/author.jpg"
