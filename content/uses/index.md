@@ -43,6 +43,7 @@ showReadingTime: false
 - [Ikea Trotten](https://www.ikea.com/gb/en/p/trotten-desk-sit-stand-white-s79429602/) - Manual sit/stand desk
 - [Dell P2723QE](https://www.amazon.co.uk/Dell-Dis-P2723QE-Professional-UHD/dp/B09TY127B8/) - Professional 4k monitor
 - [2023 16" MacBook Pro](https://support.apple.com/kb/SP858?locale=en_US) - Apple's amazing ARM
+- [Logitech C925e](https://www.logitech.com/en-gb/products/webcams/c925e-business-webcam.960-001076.html) - Surprisingly good webcam
 - [Logitech MX Keys Mini](https://www.logitech.com/en-us/products/keyboards/mx-keys-mini.html) - One keyboard, all OSes (again)
 - [Logitech MX Vertical](https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.910-005447.html) - Vertical ergo
 - [Blue Compass Mic Arm](https://www.logitechg.com/en-us/products/streaming-gear/compass-boom-microphone-arm.989-000517.html) - Microphone boom arm
