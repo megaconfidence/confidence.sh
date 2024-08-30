@@ -19,3 +19,5 @@ repository.
 Media and press coverage:
 
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7084074410176843776" allowfullscreen="" title="Embedded post" width="84%" height="362" frameborder="0"></iframe>
+
+{{< tweet user="jolah99" id="1677996946235990016" >}}
