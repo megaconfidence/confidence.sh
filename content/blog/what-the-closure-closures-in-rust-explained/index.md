@@ -46,6 +46,7 @@ Now you can call `add` can multiple times just like a function.
 
 ## Closures Capture Environment
 
+![meme](./meme.webp)
 Another difference between closures and functions is; closures can capture variables from their environment, while functions can't. As an example, imagine we wanted to print `name`:
 
 ```rust
