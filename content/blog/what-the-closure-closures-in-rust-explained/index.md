@@ -1,6 +1,6 @@
 ---
 title: "What The Closure!? Closures In Rust Explained"
-date: 2024-12-18
+date: 2025-01-30
 description: "What are Rust closures and how to use them"
 summary: "What are Rust closures and how to use them"
 tags: ["rust", "programming"]
@@ -111,4 +111,3 @@ It’s good to keep this in mind especially when working with trait bounds
 ## Conclusion
 
 Closures are quite handy and fun, fun, functional. They capture their environment and don’t need explicit type annotations, making them even more convenient. That’s it on closures. If you’d love to learn more about Rust, connect with me on [LinkedIn](https://www.linkedin.com/in/megaconfidence/) or [Twitter](https://x.com/megaconfidence). Bye!
-
