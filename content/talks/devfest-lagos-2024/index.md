@@ -18,8 +18,8 @@ I had a really good time in Lagos 🇳🇬
 🔗 Link to presentation
 {{< /button >}}
 
-My personal (albiet janky) recording of the talk:
-{{< youtube "XKwFcccm948" >}}
+Here's a recording of the talk:
+{{< youtube "vP2yvh1JO7k" >}}
 
 Media and press:
 
