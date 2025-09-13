@@ -16,7 +16,7 @@ Many web applications rely on translation to make the content accessible to user
 
 To use this API, check to see if the browser supports it:
 
-```jsx
+```js
 if ("Translator" in self) {
   // Translator API is supported
 }
@@ -24,7 +24,7 @@ if ("Translator" in self) {
 
 If the API is not supported, you could fall back to an external service to keep the user experience consistent. Before creating a Translator, it’s a good idea to check if the model supports the source and target language pairs. If not, you could use a fallback. You can do this by calling the `availability` method with the pair:
 
-```jsx
+```js
 await Translator.availability({
   sourceLanguage: "es",
   targetLanguage: "ja",
@@ -34,7 +34,7 @@ await Translator.availability({
 
 And finally, you can call the `create` method to download the model and create an instance. The model is automatically downloaded and initialised by the browser. To interact with the model, use the `Translator` instance:
 
-```jsx
+```js
 const translator = await Translator.create({
   sourceLanguage: "es",
   targetLanguage: "ja",
@@ -73,7 +73,7 @@ To demonstrate how to use the Translator API, let's build an on-demand subtitle 
 </html>
 ```
 
- <iframe src="./demo/index1.html"  style="width: 100%; border-style: none; height: 0; overflow: hidden" onload="resizeIframe(this)"></iframe>
+<iframe src="./demo/index1.html"  style="width: 100%; border-style: none; height: 0; overflow: hidden" onload="resizeIframe(this)"></iframe>
 
 The demo above is a regular video player with English subtitles. Let's write some JavaScript to read the content of the subtitle and translate it into another language. To do this, update the UI to enable the user to select a language they want captions generated for. And finally, we'll also need a JavaScript file:
 
@@ -110,7 +110,7 @@ The demo above is a regular video player with English subtitles. Let's write som
 
 In the JavaScript file, we get the language selected by the user, create a translator instance, and then read the subtitle track. While reading this track, we translate it to the selected language and create a new subtitle track in the selected language on demand. Here’s the JS implementation:
 
-```jsx
+```js
 const infoElem = document.querySelector("span");
 const videoElem = document.querySelector("video");
 document.querySelector("button").addEventListener("click", generateSubtitles);
@@ -151,17 +151,17 @@ async function generateSubtitles() {
 }
 ```
 
+<iframe src="./demo/"  style="width: 100%; border-style: none; height: 0; overflow: hidden" onload="resizeIframe(this)"></iframe>
+
 <script>
   function resizeIframe(obj) {
     obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
   }
 </script>
 
- <iframe src="./demo/"  style="width: 100%; border-style: none; height: 0; overflow: hidden" onload="resizeIframe(this)"></iframe>
-
 Finally, if you need to translate a large volume of text like a book, you should use the streaming API:
 
-```jsx
+```js
 const stream = translator.translateStreaming(largeText);
 for await (const chunk of stream) {
   console.log(chunk);
