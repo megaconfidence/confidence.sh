@@ -95,14 +95,16 @@ The demo above is a regular video player with English subtitles. Let's write som
         srclang="en"
       />
     </video>
-    <label for="cars">Generate subtitles for</label>
-    <select name="subtitles" id="subtitles">
-      <option value="ja">Japanese</option>
-      <option value="fr">French</option>
-      <option value="es">Spanish</option>
-    </select>
-    <button>Start</button>
-    <span></span>
+    <div>
+      <label for="cars">Generate subtitles for</label>
+      <select name="subtitles" id="subtitles">
+        <option value="ja">Japanese</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+      </select>
+      <button>Start</button>
+      <span></span>
+    </div>
     <script type="module" src="index.js"></script>
   </body>
 </html>
