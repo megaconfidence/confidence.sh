@@ -24,6 +24,12 @@ const imageURL = new URL(image, Astro.site);
 	})();
 </script>
 
+<!-- Preconnect to third-party origins -->
+<link rel="dns-prefetch" href="https://plausible.confidence.sh" />
+<link rel="preconnect" href="https://plausible.confidence.sh" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -81,5 +87,15 @@ const imageURL = new URL(image, Astro.site);
 	gtag('config', 'G-RLN0STWN8C');
 </script>
 
-<!-- Twitter Widgets (for embedded tweets) -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- Twitter Widgets: lazy-load only when embedded tweets are present -->
+<script is:inline>
+	(function () {
+		if (document.querySelector('.twitter-tweet')) {
+			var s = document.createElement('script');
+			s.src = 'https://platform.twitter.com/widgets.js';
+			s.async = true;
+			s.charset = 'utf-8';
+			document.head.appendChild(s);
+		}
+	})();
+</script>

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
@@ -128,7 +129,7 @@ const years = Object.keys(talksByYear)
 								<li>
 									<a href={`/talks/${talk.id}/`}>
 										{talk.data.heroImage && (
-											<img class="hero" src={talk.data.heroImage?.src} alt="" width="80" height="52" loading="lazy" />
+											<Image class="hero" src={talk.data.heroImage} alt="" width={160} height={104} loading="lazy" />
 										)}
 										<div class="post-info">
 											<div class="post-header">

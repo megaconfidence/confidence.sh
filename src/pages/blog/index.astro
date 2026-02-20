@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
@@ -129,7 +130,7 @@ const years = Object.keys(postsByYear)
 								<li>
 									<a href={`/blog/${post.id}/`}>
 										{post.data.heroImage && (
-											<img class="hero" src={post.data.heroImage?.src} alt="" width="80" height="52" loading="lazy" />
+											<Image class="hero" src={post.data.heroImage} alt="" width={160} height={104} loading="lazy" />
 										)}
 										<div class="post-info">
 											<div class="post-header">

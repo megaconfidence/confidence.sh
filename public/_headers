@@ -1,0 +1,27 @@
+# Hashed assets (Astro build output) — immutable, cache for 1 year
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and media — cache for 1 week
+/images/*
+  Cache-Control: public, max-age=604800
+
+/demos/*
+  Cache-Control: public, max-age=604800
+
+# Favicons and manifest — cache for 1 day
+/favicon*
+  Cache-Control: public, max-age=86400
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+
+# HTML pages — revalidate on each request
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
