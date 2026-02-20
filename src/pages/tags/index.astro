@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import { tagSlug } from '../../utils';
+
+// Collect all tags from all content sections
+const blog = await getCollection('blog');
+const talks = await getCollection('talks');
+const books = await getCollection('books');
+
+const allPosts = [...blog, ...talks, ...books];
+const tagCounts: Record<string, number> = {};
+
+for (const post of allPosts) {
+	const tags = post.data.tags || [];
+	for (const tag of tags) {
+		const key = tagSlug(tag);
+		tagCounts[key] = (tagCounts[key] || 0) + 1;
+	}
+}
+
+const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Tags - ${SITE_TITLE}`} description="All tags" />
+		<style>
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6em;
+				margin-top: 1.5em;
+			}
+			.tags a {
+				display: inline-block;
+				padding: 0.3em 0.7em;
+				border: 1px solid var(--tag-border);
+				border-radius: 6px;
+				color: var(--tag-text);
+				text-decoration: none;
+				font-size: 0.95em;
+				transition: border-color 0.15s ease, color 0.15s ease;
+			}
+			.tags a:hover {
+				border-color: var(--tag-hover-border);
+				color: var(--tag-hover-text);
+			}
+			.tag-count {
+				font-size: 0.8em;
+				color: var(--text-faint);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Tags</h1>
+			<div class="tags">
+				{
+					sortedTags.map(([tag, count]) => (
+						<a href={`/tags/${tag}/`}>
+							{tag} <span class="tag-count">({count})</span>
+						</a>
+					))
+				}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

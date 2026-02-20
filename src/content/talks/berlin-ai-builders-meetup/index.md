@@ -1,0 +1,25 @@
+---
+title: "Agents 101: Build smart agents that act"
+pubDate: 2026-02-18
+description: "Learn the basics for building Agents"
+tags: ["agents", "mcp", "ai"]
+heroImage: "./feature.webp"
+---
+
+
+It was my first time in Berlin in 2026 and it was quite cold and snowed during a
+few times during my visit. I help co-organized the Berlin AI Builders Meetup
+with friends from Google and Journee. It was a blast! There were about 160
+signups and over 70 attendees. I gave a talk titled 'Agents 101: Build smart agents that act'.
+
+Here's my deck and some pics:
+
+Here's my deck:
+
+<a href="https://docs.google.com/presentation/d/1Fo4IMEGU2eM2i7D4gfwvhSDnvpgvMxZuyjOMhL0Tezw/edit?usp=sharing" target="_blank" class="btn">🔗 Link to presentation</a>
+
+...and the pics:
+![](./one.webp)
+![](./two.webp)
+![](./three.webp)
+![](./four.webp)

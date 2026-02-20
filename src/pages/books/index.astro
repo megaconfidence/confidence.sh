@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const books = (await getCollection('books')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Books - ${SITE_TITLE}`} description="Some of the books I've read" />
+		<style>
+			.lead {
+				font-size: 1.15em;
+				font-style: italic;
+				color: var(--text-muted);
+				text-align: center;
+				margin: 1em 0 2em;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-bottom: 0.25em;
+			}
+			ul li a {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 1em;
+				padding: 0.6em 0;
+				text-decoration: none;
+				color: var(--text);
+				border-bottom: 1px solid var(--border-muted);
+				transition: color 0.15s ease;
+			}
+			ul li a:hover {
+				color: var(--accent);
+			}
+			.post-title {
+				font-weight: 600;
+			}
+			.post-date {
+				color: var(--text-muted);
+				font-size: 0.85em;
+				white-space: nowrap;
+			}
+			.post-summary {
+				color: var(--text-muted);
+				font-size: 0.85em;
+				margin: 0;
+				padding: 0 0 0.5em 0;
+			}
+			@media (max-width: 640px) {
+				.lead {
+					font-size: 1em;
+				}
+				ul li a {
+					flex-direction: column;
+					gap: 0.15em;
+				}
+				.post-date {
+					font-size: 0.8em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Books</h1>
+			<p class="lead">
+				A reader lives a thousand lives before he dies. The man who never reads lives only one. --
+				George R.R. Martin
+			</p>
+			<hr />
+			<ul>
+				{
+					books.map((book) => (
+						<li>
+							<a href={`/books/${book.id}/`}>
+								<span class="post-title">{book.data.title}</span>
+								<span class="post-date">
+									<FormattedDate date={book.data.pubDate} />
+								</span>
+							</a>
+							{book.data.description && <p class="post-summary">{book.data.description}</p>}
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>

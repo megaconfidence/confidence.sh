@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const talks = (await getCollection('talks')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const talksByYear: Record<number, typeof talks> = {};
+for (const talk of talks) {
+	const year = talk.data.pubDate.getFullYear();
+	if (!talksByYear[year]) talksByYear[year] = [];
+	talksByYear[year].push(talk);
+}
+const years = Object.keys(talksByYear)
+	.map(Number)
+	.sort((a, b) => b - a);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Talks - ${SITE_TITLE}`} description="Conference talks and presentations" />
+		<style>
+			.year-group h2 {
+				display: flex;
+				align-items: center;
+				gap: 0.75em;
+				margin-top: 2em;
+				margin-bottom: 0.75em;
+				color: var(--text-muted);
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			.year-group h2::after {
+				content: '';
+				flex: 1;
+				border-bottom: 2px dotted var(--border);
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-bottom: 0.25em;
+			}
+			ul li a {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				padding: 0.6em 0;
+				text-decoration: none;
+				color: var(--text);
+				border-bottom: 1px solid var(--border-muted);
+				transition: color 0.15s ease;
+			}
+			ul li a:hover .post-title {
+				color: var(--accent);
+			}
+			.hero {
+				width: 80px;
+				min-width: 80px;
+				height: 52px;
+				object-fit: cover;
+				border-radius: 6px;
+			}
+			.post-info {
+				flex: 1;
+				min-width: 0;
+			}
+			.post-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 0.75em;
+			}
+			.post-title {
+				font-weight: 600;
+				transition: color 0.15s ease;
+			}
+			.post-date {
+				color: var(--text-muted);
+				font-size: 0.85em;
+				white-space: nowrap;
+			}
+			.post-summary {
+				color: var(--text-muted);
+				font-size: 0.85em;
+				margin: 0.15em 0 0 0;
+			}
+			@media (max-width: 640px) {
+				ul li a {
+					gap: 0.75em;
+				}
+				.hero {
+					width: 60px;
+					min-width: 60px;
+					height: 40px;
+				}
+				.post-header {
+					flex-direction: column;
+					gap: 0.15em;
+				}
+				.post-date {
+					font-size: 0.8em;
+				}
+				.post-summary {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Talks</h1>
+			{
+				years.map((year) => (
+					<div class="year-group">
+						<h2>{year}</h2>
+						<ul>
+							{talksByYear[year].map((talk) => (
+								<li>
+									<a href={`/talks/${talk.id}/`}>
+										{talk.data.heroImage && (
+											<img class="hero" src={talk.data.heroImage?.src} alt="" width="80" height="52" loading="lazy" />
+										)}
+										<div class="post-info">
+											<div class="post-header">
+												<span class="post-title">{talk.data.title}</span>
+												<span class="post-date">
+													<FormattedDate date={talk.data.pubDate} />
+												</span>
+											</div>
+											{talk.data.description && <p class="post-summary">{talk.data.description}</p>}
+										</div>
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</main>
+		<Footer />
+	</body>
+</html>

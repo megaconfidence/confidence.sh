@@ -1,0 +1,11 @@
+---
+import { getEntry, render } from 'astro:content';
+import BlogPost from '../layouts/BlogPost.astro';
+
+const page = await getEntry('pages', 'uses');
+const { Content } = await render(page);
+---
+
+<BlogPost title={page.data.title} description={page.data.description} showComments={false}>
+	<Content />
+</BlogPost>

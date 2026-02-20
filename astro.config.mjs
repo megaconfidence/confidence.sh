@@ -8,13 +8,20 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://confidence.sh',
   integrations: [mdx(), sitemap()],
   adapter: cloudflare({
     platformProxy: {
-      enabled: true
+      enabled: true,
     },
-
-    imageService: "cloudflare"
+    imageService: 'cloudflare',
   }),
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
+  },
 });

@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import { tagSlug } from '../../utils';
+
+export async function getStaticPaths() {
+	const blog = await getCollection('blog');
+	const talks = await getCollection('talks');
+	const books = await getCollection('books');
+
+	const allPosts = [...blog, ...talks, ...books];
+
+	// Collect all unique tags (lowercased)
+	const tagMap: Record<string, { collection: string; post: (typeof allPosts)[0] }[]> = {};
+
+	for (const post of blog) {
+		for (const tag of post.data.tags || []) {
+			const key = tagSlug(tag);
+			if (!tagMap[key]) tagMap[key] = [];
+			tagMap[key].push({ collection: 'blog', post });
+		}
+	}
+	for (const post of talks) {
+		for (const tag of post.data.tags || []) {
+			const key = tagSlug(tag);
+			if (!tagMap[key]) tagMap[key] = [];
+			tagMap[key].push({ collection: 'talks', post });
+		}
+	}
+	for (const post of books) {
+		for (const tag of post.data.tags || []) {
+			const key = tagSlug(tag);
+			if (!tagMap[key]) tagMap[key] = [];
+			tagMap[key].push({ collection: 'books', post });
+		}
+	}
+
+	return Object.entries(tagMap).map(([tag, entries]) => ({
+		params: { tag },
+		props: {
+			tag,
+			entries: entries.sort(
+				(a, b) => b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf(),
+			),
+		},
+	}));
+}
+
+const { tag, entries } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Tag: ${tag} - ${SITE_TITLE}`} description={`Posts tagged with "${tag}"`} />
+		<style>
+			h1 {
+				text-transform: capitalize;
+			}
+			.count {
+				color: var(--text-muted);
+				font-size: 1rem;
+				font-weight: 400;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-bottom: 0.25em;
+			}
+			ul li a {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 1em;
+				padding: 0.6em 0;
+				text-decoration: none;
+				color: var(--text);
+				border-bottom: 1px solid var(--border-muted);
+				transition: color 0.15s ease;
+			}
+			ul li a:hover {
+				color: var(--accent);
+			}
+			.post-title {
+				font-weight: 600;
+			}
+			.post-date {
+				color: var(--text-muted);
+				font-size: 0.85em;
+				white-space: nowrap;
+			}
+			.section-badge {
+				font-size: 0.75em;
+				padding: 0.1em 0.4em;
+				border: 1px solid var(--tag-border);
+				border-radius: 4px;
+				color: var(--tag-text);
+				margin-left: 0.5em;
+			}
+			@media (max-width: 640px) {
+				ul li a {
+					flex-direction: column;
+					gap: 0.15em;
+				}
+				.post-date {
+					font-size: 0.8em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Tag: {tag}</h1>
+			<p class="count">{entries.length} post{entries.length !== 1 ? 's' : ''}</p>
+			<ul>
+				{
+					entries.map(({ collection, post }) => (
+						<li>
+							<a href={`/${collection}/${post.id}/`}>
+								<span>
+									<span class="post-title">{post.data.title}</span>
+									<span class="section-badge">{collection}</span>
+								</span>
+								<span class="post-date">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>

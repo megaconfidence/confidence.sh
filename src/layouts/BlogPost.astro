@@ -1,56 +1,111 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Giscus from '../components/Giscus.astro';
 import Header from '../components/Header.astro';
+import { tagSlug } from '../utils';
 
-type Props = CollectionEntry<'blog'>['data'];
+interface Props {
+	title: string;
+	description: string;
+	pubDate?: Date;
+	updatedDate?: Date;
+	heroImage?: { src: string; width: number; height: number; format: string };
+	tags?: string[];
+	showComments?: boolean;
+}
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	tags = [],
+	showComments = true,
+} = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage?.src} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
 				margin: 0;
+				padding: 1em 0 0;
 			}
 			.hero-image {
-				width: 100%;
+				max-width: 48rem;
+				margin: 0 auto;
+				padding: 0 1.5em;
 			}
 			.hero-image img {
 				display: block;
-				margin: 0 auto;
+				width: 100%;
+				height: auto;
 				border-radius: 12px;
-				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				margin: 0 auto;
+				padding: 1em 1.5em 2em;
 			}
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
 				text-align: center;
-				line-height: 1;
+				line-height: 1.3;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--text-muted);
+				font-size: 0.9em;
 			}
 			.last-updated-on {
 				font-style: italic;
+			}
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				justify-content: center;
+				margin-top: 0.5em;
+			}
+			.tags a {
+				display: inline-block;
+				padding: 0.15em 0.5em;
+				border: 1px solid var(--tag-border);
+				border-radius: 6px;
+				font-size: 0.85em;
+				color: var(--tag-text);
+				text-decoration: none;
+				transition: border-color 0.15s ease, color 0.15s ease;
+			}
+			.tags a:hover {
+				border-color: var(--tag-hover-border);
+				color: var(--tag-hover-text);
+			}
+			@media (max-width: 640px) {
+				.hero-image img {
+					border-radius: 0;
+				}
+				.hero-image {
+					padding: 0;
+				}
+				.title {
+					padding: 0.5em 0;
+				}
+				.title h1 {
+					font-size: 1.5em;
+				}
+				.prose {
+					padding: 0.5em 1em 2em;
+				}
 			}
 		</style>
 	</head>
@@ -60,24 +115,36 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <img width={heroImage.width} height={heroImage.height} src={heroImage.src} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
+						{
+							pubDate && (
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)}
+								</div>
+							)
+						}
 						<h1>{title}</h1>
+						{
+							tags.length > 0 && (
+								<div class="tags">
+									{tags.map((tag) => (
+										<a href={`/tags/${tagSlug(tag)}/`}>{tag}</a>
+									))}
+								</div>
+							)
+						}
 						<hr />
 					</div>
 					<slot />
+					{showComments && <Giscus />}
 				</div>
 			</article>
 		</main>
