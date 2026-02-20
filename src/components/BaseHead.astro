@@ -89,7 +89,7 @@ const imageURL = new URL(image, Astro.site);
 
 <!-- Twitter Widgets: lazy-load only when embedded tweets are present -->
 <script is:inline>
-	(function () {
+	document.addEventListener('DOMContentLoaded', function () {
 		if (document.querySelector('.twitter-tweet')) {
 			var s = document.createElement('script');
 			s.src = 'https://platform.twitter.com/widgets.js';
@@ -97,5 +97,5 @@ const imageURL = new URL(image, Astro.site);
 			s.charset = 'utf-8';
 			document.head.appendChild(s);
 		}
-	})();
+	});
 </script>
