@@ -3,7 +3,7 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
+<header transition:animate="none">
 	<div class="header-inner">
 		<a class="site-title" href="/">{SITE_TITLE}</a>
 		<button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
@@ -21,18 +21,20 @@ import HeaderLink from './HeaderLink.astro';
 </header>
 
 <script>
-	const btn = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
-	const nav = document.querySelector('.nav-links') as HTMLElement | null;
-	if (btn && nav) {
-		const iconMenu = btn.querySelector('.icon-menu') as SVGElement | null;
-		const iconClose = btn.querySelector('.icon-close') as SVGElement | null;
-		btn.addEventListener('click', () => {
-			const isOpen = nav.classList.toggle('open');
-			btn.setAttribute('aria-expanded', String(isOpen));
-			if (iconMenu) iconMenu.style.display = isOpen ? 'none' : '';
-			if (iconClose) iconClose.style.display = isOpen ? '' : 'none';
-		});
-	}
+	document.addEventListener('astro:page-load', () => {
+		const btn = document.querySelector('.menu-toggle') as HTMLButtonElement | null;
+		const nav = document.querySelector('.nav-links') as HTMLElement | null;
+		if (btn && nav) {
+			const iconMenu = btn.querySelector('.icon-menu') as SVGElement | null;
+			const iconClose = btn.querySelector('.icon-close') as SVGElement | null;
+			btn.addEventListener('click', () => {
+				const isOpen = nav.classList.toggle('open');
+				btn.setAttribute('aria-expanded', String(isOpen));
+				if (iconMenu) iconMenu.style.display = isOpen ? 'none' : '';
+				if (iconClose) iconClose.style.display = isOpen ? '' : 'none';
+			});
+		}
+	});
 </script>
 
 <style>

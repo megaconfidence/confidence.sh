@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
@@ -13,6 +14,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = '/images/author.jpg' } = Astro.props;
 const imageURL = new URL(image, Astro.site);
 ---
+
+<ClientRouter />
 
 <!-- Dark mode: apply class before paint to prevent flash -->
 <script is:inline>

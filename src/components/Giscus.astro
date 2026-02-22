@@ -23,42 +23,52 @@
 </div>
 
 <script>
-	function updateGiscusTheme() {
-		const isDark = document.documentElement.classList.contains('dark');
-		const theme = isDark ? 'transparent_dark' : 'light';
-		const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
-		if (iframe) {
-			iframe.contentWindow?.postMessage(
-				{ giscus: { setConfig: { theme } } },
-				'https://giscus.app',
-			);
-		}
-	}
+	let giscusObserver: MutationObserver | null = null;
 
-	// Set initial theme once Giscus loads
-	const observer = new MutationObserver((mutations) => {
-		for (const mutation of mutations) {
-			for (const node of mutation.addedNodes) {
-				if (node instanceof HTMLIFrameElement && node.classList.contains('giscus-frame')) {
-					node.addEventListener('load', () => updateGiscusTheme());
-					observer.disconnect();
-				}
+	document.addEventListener('astro:page-load', () => {
+		// Clean up previous observer
+		giscusObserver?.disconnect();
+		giscusObserver = null;
+
+		const wrapper = document.querySelector('.giscus-wrapper');
+		if (!wrapper) return;
+
+		function updateGiscusTheme() {
+			const isDark = document.documentElement.classList.contains('dark');
+			const theme = isDark ? 'transparent_dark' : 'light';
+			const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+			if (iframe) {
+				iframe.contentWindow?.postMessage(
+					{ giscus: { setConfig: { theme } } },
+					'https://giscus.app',
+				);
 			}
 		}
-	});
-	observer.observe(document.querySelector('.giscus-wrapper') || document.body, {
-		childList: true,
-		subtree: true,
-	});
 
-	// Listen for theme toggle changes
-	const themeToggle = document.querySelector('.theme-toggle');
-	if (themeToggle) {
-		themeToggle.addEventListener('click', () => {
-			// Small delay to let the class toggle complete
-			setTimeout(updateGiscusTheme, 50);
+		// Set initial theme once Giscus loads
+		giscusObserver = new MutationObserver((mutations) => {
+			for (const mutation of mutations) {
+				for (const node of mutation.addedNodes) {
+					if (node instanceof HTMLIFrameElement && node.classList.contains('giscus-frame')) {
+						node.addEventListener('load', () => updateGiscusTheme());
+						giscusObserver?.disconnect();
+					}
+				}
+			}
 		});
-	}
+		giscusObserver.observe(wrapper, {
+			childList: true,
+			subtree: true,
+		});
+
+		// Listen for theme toggle changes
+		const themeToggle = document.querySelector('.theme-toggle');
+		if (themeToggle) {
+			themeToggle.addEventListener('click', () => {
+				setTimeout(updateGiscusTheme, 50);
+			});
+		}
+	});
 </script>
 
 <style>
