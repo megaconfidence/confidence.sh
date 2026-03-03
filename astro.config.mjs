@@ -11,6 +11,7 @@ export default defineConfig({
   site: 'https://confidence.sh',
   redirects: {
     '/blog/index.xml': '/rss.xml',
+    '/index.xml': '/rss.xml',
   },
   integrations: [mdx(), sitemap()],
   adapter: cloudflare({
