@@ -1,0 +1,195 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE, YOUTUBE_CHANNEL_ID } from '../../consts';
+import { fetchAllVideos } from '../../lib/youtube';
+
+const videos = await fetchAllVideos(import.meta.env.YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID);
+
+// Group videos by year
+const videosByYear: Record<number, typeof videos> = {};
+for (const video of videos) {
+	const year = new Date(video.publishedAt).getFullYear();
+	if (!videosByYear[year]) videosByYear[year] = [];
+	videosByYear[year].push(video);
+}
+const years = Object.keys(videosByYear)
+	.map(Number)
+	.sort((a, b) => b - a);
+
+function formatViews(count: number): string {
+	if (count >= 1_000_000) return `${(count / 1_000_000).toFixed(1).replace(/\.0$/, '')}M views`;
+	if (count >= 1_000) return `${(count / 1_000).toFixed(1).replace(/\.0$/, '')}K views`;
+	return `${count} views`;
+}
+
+function formatDate(iso: string): string {
+	return new Date(iso).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+	});
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Videos - ${SITE_TITLE}`} description="YouTube videos by Confidence Okoghenun" />
+		<style>
+			.year-group h2 {
+				display: flex;
+				align-items: center;
+				gap: 0.75em;
+				margin-top: 2em;
+				margin-bottom: 0.75em;
+				color: var(--text-muted);
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			.year-group h2::after {
+				content: '';
+				flex: 1;
+				border-bottom: 2px dotted var(--border);
+			}
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.5rem;
+			}
+			.video-card {
+				display: block;
+				text-decoration: none;
+				color: var(--text);
+				border-radius: 10px;
+				border: 1px solid var(--border-muted);
+				background-color: var(--bg);
+				overflow: hidden;
+				transition: border-color 0.15s ease, box-shadow 0.15s ease;
+			}
+			.video-card:hover {
+				border-color: var(--border);
+				box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+			}
+			.thumbnail-wrapper {
+				position: relative;
+				aspect-ratio: 16 / 9;
+				overflow: hidden;
+				background-color: var(--bg-secondary);
+			}
+			.thumbnail-wrapper img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 0;
+				margin: 0;
+			}
+			.duration-badge {
+				position: absolute;
+				bottom: 0.5rem;
+				right: 0.5rem;
+				background-color: rgba(0, 0, 0, 0.8);
+				color: #fff;
+				font-size: 0.75rem;
+				font-weight: 600;
+				padding: 0.15rem 0.45rem;
+				border-radius: 4px;
+				line-height: 1.4;
+			}
+			.video-info {
+				padding: 0.75rem 0.875rem 0.875rem;
+			}
+			.video-title {
+				font-weight: 600;
+				font-size: 0.95rem;
+				line-height: 1.35;
+				transition: color 0.15s ease;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			.video-card:hover .video-title {
+				color: var(--accent);
+			}
+			.video-meta {
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+				margin-top: 0.35rem;
+				color: var(--text-muted);
+				font-size: 0.8rem;
+			}
+			.video-meta .separator {
+				color: var(--text-faint);
+			}
+			.empty-state {
+				text-align: center;
+				padding: 4rem 1rem;
+				color: var(--text-muted);
+			}
+			.empty-state p {
+				margin: 0.5rem 0;
+			}
+			@media (max-width: 640px) {
+				.video-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Videos</h1>
+			{
+				videos.length === 0 ? (
+					<div class="empty-state">
+						<p>No videos available right now.</p>
+						<p>
+							Check out the channel on{' '}
+							<a href="https://www.youtube.com/@megaconfidence" target="_blank" rel="noopener">
+								YouTube
+							</a>
+							.
+						</p>
+					</div>
+				) : (
+					years.map((year) => (
+						<div class="year-group">
+							<h2>{year}</h2>
+							<div class="video-grid">
+								{videosByYear[year].map((video) => (
+									<a class="video-card" href={video.url} target="_blank" rel="noopener">
+										<div class="thumbnail-wrapper">
+											<img
+												src={video.thumbnail}
+												alt={video.title}
+												width="480"
+												height="270"
+												loading="lazy"
+											/>
+											<span class="duration-badge">
+												{video.durationSeconds <= 60 ? 'Short' : video.duration}
+											</span>
+										</div>
+										<div class="video-info">
+											<div class="video-title">{video.title}</div>
+											<div class="video-meta">
+												<span>{formatDate(video.publishedAt)}</span>
+												<span class="separator">&middot;</span>
+												<span>{formatViews(video.viewCount)}</span>
+											</div>
+										</div>
+									</a>
+								))}
+							</div>
+						</div>
+					))
+				)
+			}
+		</main>
+		<Footer />
+	</body>
+</html>

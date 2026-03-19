@@ -3,6 +3,7 @@ import { getEntry, render } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
 
 const page = await getEntry('pages', 'uses');
+if (!page) throw new Error('Content entry "pages/uses" not found');
 const { Content } = await render(page);
 ---
 

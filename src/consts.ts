@@ -4,6 +4,8 @@ export const AUTHOR_NAME = 'Confidence Okoghenun';
 export const AUTHOR_BIO = 'Software Engineer \u{1F6E0}\u{FE0F} \u2022 Developer Advocate \u{1F951}';
 export const AUTHOR_IMAGE = '/images/author.jpg';
 
+export const YOUTUBE_CHANNEL_ID = 'UCbB2VUG0SGPFHlWxvkDE63g';
+
 export const SOCIAL_LINKS = {
   youtube: 'https://www.youtube.com/@megaconfidence',
   github: 'https://github.com/megaconfidence',

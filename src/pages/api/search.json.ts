@@ -1,13 +1,16 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { YOUTUBE_CHANNEL_ID } from '../../consts';
+import { fetchAllVideos } from '../../lib/youtube';
 
 export const prerender = true;
 
 export const GET: APIRoute = async () => {
-	const [blog, talks, books] = await Promise.all([
+	const [blog, talks, books, videos] = await Promise.all([
 		getCollection('blog'),
 		getCollection('talks'),
 		getCollection('books'),
+		fetchAllVideos(import.meta.env.YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID),
 	]);
 
 	const items = [
@@ -34,6 +37,15 @@ export const GET: APIRoute = async () => {
 			description: p.data.description,
 			tags: p.data.tags || [],
 			date: p.data.pubDate.toISOString(),
+		})),
+		...videos.map((v) => ({
+			type: 'videos',
+			slug: v.videoId,
+			title: v.title,
+			description: v.description,
+			tags: [] as string[],
+			date: v.publishedAt,
+			url: v.url,
 		})),
 	];
 

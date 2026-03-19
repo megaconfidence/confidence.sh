@@ -23,6 +23,7 @@
 		description: string;
 		tags: string[];
 		date: string;
+		url?: string;
 	}
 
 	let fuse: Fuse<SearchItem> | null = null;
@@ -93,13 +94,15 @@
 
 		container.innerHTML = items
 			.map((item, i) => {
-				const typeLabel = item.type === 'blog' ? 'Blog' : item.type === 'talks' ? 'Talk' : 'Book';
+				const typeLabel = item.type === 'blog' ? 'Blog' : item.type === 'talks' ? 'Talk' : item.type === 'videos' ? 'Video' : 'Book';
 				const date = new Date(item.date).toLocaleDateString('en-US', {
 					year: 'numeric',
 					month: 'short',
 					day: 'numeric',
 				});
-				return `<a href="/${item.type}/${item.slug}/" class="search-result${i === selectedIndex ? ' selected' : ''}" data-index="${i}">
+				const href = item.url || `/${item.type}/${item.slug}/`;
+				const target = item.url ? ' target="_blank" rel="noopener"' : '';
+				return `<a href="${href}"${target} class="search-result${i === selectedIndex ? ' selected' : ''}" data-index="${i}">
 				<div class="search-result-meta">
 					<span class="search-result-type">${typeLabel}</span>
 					<span class="search-result-date">${date}</span>

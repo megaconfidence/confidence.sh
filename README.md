@@ -13,6 +13,18 @@ This site uses `imageService: 'cloudflare'` in `astro.config.mjs`, which relies 
 
 Without this, all images processed through Astro's `<Image>` component and markdown pipeline will return broken `/cdn-cgi/image/...` URLs.
 
+## GitHub Actions (Automated Deploys)
+
+A workflow at `.github/workflows/deploy.yml` builds and deploys the site on every push to `main`, on a 12-hour cron (to pick up new YouTube videos), and via manual trigger.
+
+Add these three secrets in your repo's **Settings > Secrets and variables > Actions**:
+
+| Secret | Value |
+|---|---|
+| `YOUTUBE_API_KEY` | YouTube Data API v3 key |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with Workers Scripts Edit permission |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
+
 ## Converting Images To Webp
 
 Install `cwebp` </br>
