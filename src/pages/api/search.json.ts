@@ -10,7 +10,7 @@ export const GET: APIRoute = async () => {
 		getCollection('blog'),
 		getCollection('talks'),
 		getCollection('books'),
-		fetchAllVideos(import.meta.env.YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID),
+		fetchAllVideos(process.env.YOUTUBE_API_KEY ?? '', YOUTUBE_CHANNEL_ID),
 	]);
 
 	const items = [

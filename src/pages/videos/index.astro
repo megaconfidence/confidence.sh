@@ -5,7 +5,7 @@ import Header from '../../components/Header.astro';
 import { SITE_TITLE, YOUTUBE_CHANNEL_ID } from '../../consts';
 import { fetchAllVideos } from '../../lib/youtube';
 
-const videos = await fetchAllVideos(import.meta.env.YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID);
+const videos = await fetchAllVideos(process.env.YOUTUBE_API_KEY ?? '', YOUTUBE_CHANNEL_ID);
 
 // Group videos by year
 const videosByYear: Record<number, typeof videos> = {};
