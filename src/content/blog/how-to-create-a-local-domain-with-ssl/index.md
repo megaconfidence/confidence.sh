@@ -24,7 +24,7 @@ This is the first step. You’ll need to buy a domain name, which may cost about
 
 With a custom domain, you could also have a really nice double DNS setup. A single domain resolves differently depending on the network you’re on i.e homeassistant.yourdomain.com resolves to a local IP while on your home wifi. On a public network, it resolves to a public IP (i.e homeassistant exposed publicly via a Cloudflare tunnel). This way, you’ll have super-fast local traffic routing when at home. And when not home, you'll have the convenience of accessing your service via the same domain. This is an advanced setup, and I plan to cover it in a future article. Let me know in the comments if you’d like to see an article.
 
-I’ll recommend buying a custom [domain from Cloudflar](https://domains.cloudflare.com/)e. I’m biased. Also, you won’t need to change your nameservers to Cloudflare, as we’ll use Cloudflare for the DNS-01 challenge later on. You could check out https://www.dynadot.com for slightly cheaper domains, but you’ll need to [set up Cloudflare to resolve your domain](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/). Now let’s move on to the next step.
+I’ll recommend buying a custom [domain from Cloudflare](https://domains.cloudflare.com/). I’m biased. Also, you won’t need to change your nameservers to Cloudflare, as we’ll use Cloudflare for the DNS-01 challenge later on. You could check out https://www.dynadot.com for slightly cheaper domains, but you’ll need to [set up Cloudflare to resolve your domain](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/). Now let’s move on to the next step.
 
 ## Set up Pi-hole as a DNS server
 
