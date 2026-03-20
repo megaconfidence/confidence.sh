@@ -14,6 +14,12 @@ export default defineConfig({
     '/index.xml': '/rss.xml',
   },
   integrations: [mdx(), sitemap()],
+  session: {
+    driver: 'cloudflare-kv-binding',
+    options: {
+      binding: 'SESSION',
+    },
+  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
