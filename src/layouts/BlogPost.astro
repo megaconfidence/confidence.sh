@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Giscus from '../components/Giscus.astro';
 import Header from '../components/Header.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import { tagSlug } from '../utils';
 
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
 	heroImage?: { src: string; width: number; height: number; format: string };
 	tags?: string[];
 	showComments?: boolean;
+	headings?: { depth: number; slug: string; text: string }[];
 }
 
 const {
@@ -24,7 +26,11 @@ const {
 	heroImage,
 	tags = [],
 	showComments = true,
+	headings = [],
 } = Astro.props;
+
+const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+const hasToc = tocHeadings.length > 0;
 ---
 
 <html lang="en">
@@ -48,10 +54,95 @@ const {
 				height: auto;
 				border-radius: 12px;
 			}
-			.prose {
+
+			/* ── Article grid (prose + optional TOC sidebar) ── */
+			.article-grid {
+				max-width: 65ch;
 				margin: 0 auto;
 				padding: 1em 1.5em 2em;
 			}
+
+			.toc-sidebar {
+				display: none;
+			}
+
+			@media (min-width: 1200px) {
+				.article-grid.has-toc {
+					display: grid;
+					grid-template-columns: 1fr min(65ch, 100%) 1fr;
+					max-width: 100%;
+					padding: 1em 2rem 2em;
+				}
+				.article-grid.has-toc .prose {
+					grid-column: 2;
+				}
+				.toc-sidebar {
+					display: block;
+					grid-column: 3;
+					position: sticky;
+					top: 5rem;
+					align-self: start;
+					max-height: calc(100vh - 6rem);
+					overflow-y: auto;
+					width: 13rem;
+					margin-left: 1rem;
+				}
+				.toc-sidebar-title {
+					font-weight: 600;
+					font-size: 0.8rem;
+					color: var(--text-muted);
+					margin-bottom: 0.75em;
+					text-transform: uppercase;
+					letter-spacing: 0.05em;
+				}
+				.toc-mobile {
+					display: none !important;
+				}
+			}
+
+			/* ── Mobile TOC (collapsible) ── */
+			.toc-mobile {
+				margin-bottom: 1.5em;
+				border: 1px solid var(--border);
+				border-radius: 8px;
+			}
+			.toc-mobile summary {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.6em 1em;
+				font-weight: 600;
+				font-size: 0.85rem;
+				color: var(--text-muted);
+				cursor: pointer;
+				list-style: none;
+			}
+			.toc-mobile summary::-webkit-details-marker {
+				display: none;
+			}
+			.toc-mobile summary::after {
+				content: '';
+				display: inline-block;
+				width: 0.45em;
+				height: 0.45em;
+				border-right: 2px solid var(--text-muted);
+				border-bottom: 2px solid var(--text-muted);
+				transform: rotate(-45deg);
+				transition: transform 0.2s ease;
+				flex-shrink: 0;
+				margin-left: 0.5em;
+			}
+			.toc-mobile[open] summary::after {
+				transform: rotate(45deg);
+			}
+			.toc-mobile[open] summary {
+				border-bottom: 1px solid var(--border);
+			}
+			.toc-mobile-inner {
+				padding: 0.5em 0.25em;
+			}
+
+			/* ── Title ── */
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
@@ -90,6 +181,8 @@ const {
 				border-color: var(--tag-hover-border);
 				color: var(--tag-hover-text);
 			}
+
+			/* ── Mobile overrides ── */
 			@media (max-width: 640px) {
 				.hero-image img {
 					border-radius: 0;
@@ -103,7 +196,7 @@ const {
 				.title h1 {
 					font-size: 1.5em;
 				}
-				.prose {
+				.article-grid {
 					padding: 0.5em 1em 2em;
 				}
 			}
@@ -117,37 +210,123 @@ const {
 				<div class="hero-image">
 					{heroImage && <img width={heroImage.width} height={heroImage.height} src={heroImage.src} alt="" />}
 				</div>
-				<div class="prose">
-					<div class="title">
+				<div class:list={['article-grid', { 'has-toc': hasToc }]}>
+					<div class="prose">
+						<div class="title">
+							{
+								pubDate && (
+									<div class="date">
+										<FormattedDate date={pubDate} />
+										{updatedDate && (
+											<div class="last-updated-on">
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)}
+									</div>
+								)
+							}
+							<h1>{title}</h1>
+							{
+								tags.length > 0 && (
+									<div class="tags">
+										{tags.map((tag) => (
+											<a href={`/tags/${tagSlug(tag)}/`}>{tag}</a>
+										))}
+									</div>
+								)
+							}
+							<hr />
+						</div>
 						{
-							pubDate && (
-								<div class="date">
-									<FormattedDate date={pubDate} />
-									{updatedDate && (
-										<div class="last-updated-on">
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)}
-								</div>
+							hasToc && (
+								<details class="toc-mobile">
+									<summary>On this page</summary>
+									<div class="toc-mobile-inner">
+										<TableOfContents headings={headings} />
+									</div>
+								</details>
 							)
 						}
-						<h1>{title}</h1>
-						{
-							tags.length > 0 && (
-								<div class="tags">
-									{tags.map((tag) => (
-										<a href={`/tags/${tagSlug(tag)}/`}>{tag}</a>
-									))}
-								</div>
-							)
-						}
-						<hr />
+						<slot />
+						{showComments && <Giscus />}
 					</div>
-					<slot />
-					{showComments && <Giscus />}
+					{
+						hasToc && (
+							<aside class="toc-sidebar">
+								<div class="toc-sidebar-title">On this page</div>
+								<TableOfContents headings={headings} />
+							</aside>
+						)
+					}
 				</div>
 			</article>
 		</main>
 		<Footer />
+
+		<script>
+			function setupTOC() {
+				const tocLinks = document.querySelectorAll<HTMLAnchorElement>('[data-heading]');
+				if (tocLinks.length === 0) return;
+
+				const headingSlugs = Array.from(tocLinks).map((l) => l.getAttribute('data-heading')!);
+				const uniqueSlugs = [...new Set(headingSlugs)];
+				const headingElements = uniqueSlugs
+					.map((slug) => document.getElementById(slug))
+					.filter((el): el is HTMLElement => el !== null);
+
+				if (headingElements.length === 0) return;
+
+				const setActive = (slug: string) => {
+					tocLinks.forEach((link) => {
+						link.classList.toggle('active', link.getAttribute('data-heading') === slug);
+					});
+				};
+
+				const onScroll = () => {
+					let current = headingElements[0]?.id || '';
+					for (const heading of headingElements) {
+						const rect = heading.getBoundingClientRect();
+						if (rect.top <= 100) {
+							current = heading.id;
+						} else {
+							break;
+						}
+					}
+					setActive(current);
+				};
+
+				let ticking = false;
+				const scrollHandler = () => {
+					if (!ticking) {
+						requestAnimationFrame(() => {
+							onScroll();
+							ticking = false;
+						});
+						ticking = true;
+					}
+				};
+
+				window.addEventListener('scroll', scrollHandler);
+				onScroll();
+
+				// Close mobile TOC on link click
+				document.querySelectorAll<HTMLAnchorElement>('.toc-mobile a[data-heading]').forEach((link) => {
+					link.addEventListener('click', () => {
+						const details = link.closest('details');
+						if (details) details.open = false;
+					});
+				});
+
+				return () => {
+					window.removeEventListener('scroll', scrollHandler);
+				};
+			}
+
+			let cleanup: (() => void) | undefined;
+			document.addEventListener('astro:page-load', () => {
+				cleanup?.();
+				cleanup = setupTOC();
+			});
+		</script>
 	</body>
 </html>
