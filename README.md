@@ -19,11 +19,11 @@ A workflow at `.github/workflows/deploy.yml` builds and deploys the site on ever
 
 Add these three secrets in your repo's **Settings > Secrets and variables > Actions**:
 
-| Secret | Value |
-|---|---|
-| `YOUTUBE_API_KEY` | YouTube Data API v3 key |
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API token with Workers Scripts Edit permission |
-| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
+| Secret                  | Value                                                     |
+| ----------------------- | --------------------------------------------------------- |
+| `YOUTUBE_API_KEY`       | YouTube Data API v3 key                                   |
+| `CLOUDFLARE_API_TOKEN`  | Cloudflare API token with Workers Scripts Edit permission |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID                                |
 
 ## Converting Images To Webp
 
@@ -35,3 +35,7 @@ with a quality of 50
 ```sh
 for file in ./*; do cwebp -q 90 "$file" -o "${file%.*}.webp"; done
 ```
+
+## Thumbnail Dimensions
+
+Resolution: 1600x840px Icon: 512x512px
