@@ -8,8 +8,6 @@ tags: ["homelab", "networking"]
 heroImage: "./feature.webp"
 ---
 
-> This article was handwritten and not AI generated
-
 I run a homelab, and each time I show it off, I always get asked how I set up my local domain. I haven’t really given good answers in the past, as it’s quite complicated (you’ll see shortly). So I’m fixing it today with this detailed article. This is the ultimate guide to creating a local domain for your homelab.
 
 ![Setup](./setup.webp)
@@ -117,4 +115,3 @@ Now you can create more subdomains for as many services as you like by creating 
 Woohoo! I feel so good that this article is finally out. Yeah, so that’s how to create a local domain for your homelab, and I hope you found this article helpful. Leave a like below to let me know. I plan to write a follow-up guide on the double DNS setup, so you could use the same domain name to access your services either from a public or private network.
 
 I post a lot about tech and random things I find interesting on [Twitter](https://x.com/megaconfidence) and [LinkedIn](https://www.linkedin.com/in/megaconfidence/), so follow me to stay updated. Until next time, Jaane.
-
