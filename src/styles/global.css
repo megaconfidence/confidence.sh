@@ -295,7 +295,8 @@ a:hover {
 }
 
 .prose img {
-  margin: 1.5em 0;
+  display: block;
+  margin: 1.5em auto;
 }
 
 .prose blockquote {

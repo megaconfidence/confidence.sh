@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
+import { rehypeStaticTweets } from './src/lib/rehype-static-tweets.js';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
     imageService: 'cloudflare',
   }),
   markdown: {
+    rehypePlugins: [rehypeStaticTweets],
     shikiConfig: {
       themes: {
         light: 'github-light',

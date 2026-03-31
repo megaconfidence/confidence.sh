@@ -25,6 +25,12 @@ Add these three secrets in your repo's **Settings > Secrets and variables > Acti
 | `CLOUDFLARE_API_TOKEN`  | Cloudflare API token with Workers Scripts Edit permission |
 | `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID                                |
 
+## Static Tweet Embeds
+
+Tweets embedded in blog posts and talks are rendered at build time using a custom rehype plugin (`src/lib/rehype-static-tweets.js`). The plugin calls Twitter's oEmbed API during the Astro build to fetch static HTML for each `<blockquote class="twitter-tweet">` block in markdown files.
+
+If the oEmbed request fails for a given tweet (e.g. deleted tweet, network error), the original blockquote is left intact and the client-side `widgets.js` loader in `BaseHead.astro` handles it as a fallback. The oEmbed API is unauthenticated and not rate-limited, so frequent CI builds are not a concern.
+
 ## Converting Images To Webp
 
 Install `cwebp` </br>
