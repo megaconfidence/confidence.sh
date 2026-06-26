@@ -7,13 +7,13 @@ heroImage: "./feature.webp"
 ---
 
 We spend a good amount of our time each day at work communicating with others.
-Email has been a powerful communicating system that every company uses to
+Email has been a powerful communication system that every company uses to
 communicate and coordinate work. What if you could put an agent in the inbox and
 have it automate all the boring tasks you shouldn't be doing?
 
-I gave this talk titled 'How to buld email-native agent' at Okta's AI identiy
+I gave this talk titled 'How to build email-native agent' at Okta's AI identity
 summit in London. It was a blazing hot summer day but we had fun building agents
-and exploring the demo. Both the demo and my presentation is linked below.
+and exploring the demo. Both the demo and my presentation are linked below.
 
 Here are my links:
 
