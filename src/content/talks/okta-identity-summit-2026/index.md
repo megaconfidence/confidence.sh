@@ -1,0 +1,27 @@
+---
+title: "How to build email-native agents"
+pubDate: 2026-06-26
+description: "A talk about everything you need to build an email-native agent"
+tags: ["ai", "agents", "email", "cloudflare"]
+heroImage: "./feature.webp"
+---
+
+We spend a good amount of our time each day at work communicating with others.
+Email has been a powerful communicating system that every company uses to
+communicate and coordinate work. What if you could put an agent in the inbox and
+have it automate all the boring tasks you shouldn't be doing?
+
+I gave this talk titled 'How to buld email-native agent' at Okta's AI identiy
+summit in London. It was a blazing hot summer day but we had fun building agents
+and exploring the demo. Both the demo and my presentation is linked below.
+
+Here are my links:
+
+<a href="https://email-native-agents.conflare.workers.dev/1" target="_blank" class="btn">🔗 Link to presentation</a>
+<a href="https://github.com/megaconfidence/email-agent" target="_blank" class="btn">🔗 Link to demo</a>
+
+...and some pics:
+
+![](./images/1.webp)
+![](./images/2.webp)
+![](./images/3.webp)
