@@ -20,6 +20,8 @@ Here are my links:
 <a href="https://email-native-agents.conflare.workers.dev/1" target="_blank" class="btn">🔗 Link to presentation</a>
 <a href="https://github.com/megaconfidence/email-agent" target="_blank" class="btn">🔗 Link to demo</a>
 
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/WvY304cqQug" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio:16/9;width:100%;"></iframe></div>
+
 ...and some pics:
 
 ![](./images/1.webp)
