@@ -343,11 +343,52 @@ const hasToc = tocHeadings.length > 0;
 			});
 		}
 
+		function setupHeadingAnchors() {
+			const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`;
+			const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+			document
+				.querySelectorAll<HTMLHeadingElement>('.prose :is(h1, h2, h3, h4, h5, h6)[id]')
+				.forEach((heading) => {
+					if (heading.querySelector('.heading-anchor')) return;
+					const id = heading.id;
+					const label = heading.textContent?.trim() ?? '';
+
+					// Link icon on the right-hand side of the heading.
+					const anchor = document.createElement('a');
+					anchor.className = 'heading-anchor';
+					anchor.href = `#${id}`;
+					anchor.setAttribute('aria-label', `Copy link to section: ${label}`);
+					anchor.innerHTML = linkIcon;
+					heading.appendChild(anchor);
+					heading.classList.add('heading-linked');
+
+					// Clicking anywhere on the heading copies the link (same as the icon).
+					let resetTimer: ReturnType<typeof setTimeout> | undefined;
+					heading.addEventListener('click', (e) => {
+						// Don't hijack deliberate text selection on the heading.
+						if (window.getSelection()?.toString()) return;
+						e.preventDefault();
+						history.replaceState(null, '', `#${id}`);
+						const url = `${location.origin}${location.pathname}#${id}`;
+						navigator.clipboard?.writeText(url).catch(() => {});
+						anchor.classList.add('copied');
+						anchor.innerHTML = checkIcon;
+						clearTimeout(resetTimer);
+						resetTimer = window.setTimeout(() => {
+							anchor.classList.remove('copied');
+							anchor.innerHTML = linkIcon;
+						}, 1500);
+					});
+				});
+		}
+
 		let cleanup: (() => void) | undefined;
 		document.addEventListener('astro:page-load', () => {
 			cleanup?.();
 			cleanup = setupTOC();
 			setupCopyButtons();
+			setupHeadingAnchors();
 		});
 	</script>
 	</body>

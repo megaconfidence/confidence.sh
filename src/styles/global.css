@@ -255,15 +255,19 @@ a:hover {
   text-decoration-color: transparent;
 }
 
+/* Re-assert the properties that the generic `.prose a` rule would otherwise
+   clobber (underline, tiny padding, 2px radius, hover pill). */
 .prose a.btn {
   color: var(--btn-text) !important;
   text-decoration: none;
   background-color: var(--btn-bg);
-  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  padding: 0.6em 1.15em;
 }
 
 .prose a.btn:hover {
   background-color: var(--btn-hover-bg);
+  text-decoration: none;
 }
 
 .prose h2 {
@@ -282,6 +286,58 @@ a:hover {
   margin-top: 1.25em;
   margin-bottom: 0.5em;
   scroll-margin-top: 5rem;
+}
+
+/* ── Heading Anchor Links ──────────────────────────────────────────────────── */
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 5rem;
+}
+
+/* Link icon on the right-hand side of the heading. The space is reserved
+   (we toggle opacity) so revealing it on hover never shifts the layout. */
+.prose .heading-anchor {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.4em;
+  padding: 0;
+  color: var(--text-faint);
+  opacity: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.prose .heading-anchor svg {
+  width: 0.7em;
+  height: 0.7em;
+}
+
+/* The whole heading is a click target for copying its link. */
+.prose .heading-linked {
+  cursor: pointer;
+}
+
+/* Reveal the icon on heading hover, on keyboard focus, or right after copy. */
+.prose .heading-linked:hover .heading-anchor,
+.prose .heading-anchor:focus-visible,
+.prose .heading-anchor.copied {
+  opacity: 1;
+}
+
+.prose .heading-linked:hover .heading-anchor,
+.prose .heading-anchor:hover,
+.prose .heading-anchor.copied {
+  color: var(--accent);
+  background: transparent;
+  text-decoration: none;
+}
+
+/* Touch devices have no hover state — keep the icon discoverable. */
+@media (hover: none) {
+  .prose .heading-anchor {
+    opacity: 0.4;
+  }
 }
 
 .prose ul,
@@ -504,21 +560,40 @@ html.dark ::selection {
 /* ── Button Links (from Hugo shortcode) ────────────────────────────────────── */
 
 .btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.6em 1.15em;
+  /* right + vertical margins so adjacent buttons never touch and wrap nicely */
+  margin: 0.4em 0.6em 0.4em 0;
   background-color: var(--btn-bg);
   color: var(--btn-text) !important;
-  border-radius: 6px;
+  border: none;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95em;
-  transition: background-color 0.15s ease;
+  line-height: 1.2;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover {
   background-color: var(--btn-hover-bg);
   color: var(--btn-text) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ── Lead Text ─────────────────────────────────────────────────────────────── */
